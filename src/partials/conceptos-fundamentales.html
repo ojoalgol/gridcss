@@ -1,0 +1,49 @@
+  <!-- ********** Conceptos fundamentales -->
+  <section id="conceptos-fundamentales" class="">
+    <h2>Conceptos fundamentales</h2>    
+    <div class="contenedor">
+      <p><b>• Grid Container</b> es el elemento "Padre" que tiene un nuevo tipo de display, <code>display: grid;</code>. Nos permite colocar otras propiedades para manipular nuestro layout.</p>
+      <p><b>• Grid Item</b> son nuestro componentes, contenido, lo que vamos a manejar. Nuestras filas o columnas que vamos a mover a nuestro gusto. Es importante tomer en cuenta que <i>son hijos directos</i> de "Grid Container".</p>
+      <pre>
+      &lt;div class="wrapper"> <b class="color-verde"><big>◀</big> Este es el "Grid Container"</b>
+        &lt;div class="one">Uno&lt;/div> <b class="color-verde"><big>◀</big> Estos son los "Grid Item"</b>
+        &lt;div class="two">Dos&lt;/div>
+        &lt;div class="three">Tres&lt;/div>
+        &lt;div class="four">
+            Cuatro
+            &lt;p>Sub-item&lt;/p> <b class="color-secundario"><big>◀</big> Este no es un "Grid Item"</b>
+        &lt;/div>
+        &lt;div class="five">Cinco&lt;/div>
+        &lt;div class="six">Seis&lt;/div>
+      &lt;/div>
+      </pre>
+      <div class="wrapper mt-2">
+        <div class="one">Uno</div>
+        <div class="two">Dos</div>
+        <div class="three">Tres</div>
+        <div class="four">
+          Cuatro
+          <p>Sub-item</p>
+        </div>
+        <div class="five">Cinco</div>
+        <div class="six">Seis</div>
+      </div>
+      
+      <p class="mt-2"><b>• Grid Line</b> son las líneas divisorias horizontales y verticales. Se crean cuando se definen las columnas y filas del layout.</p>
+      <center><img src="assets/img/grid-line01.png" alt="Imagen de grid-line"></center>
+
+      <p class="mt-2"><b>• Grid Track</b> Espacio entre dos líneas adyacentes. mejor conocidos como "Filas y columnas".</p>
+      <center><img src="assets/img/grid-track01.png" alt="Imagen de grid-track"></center>
+
+      <p class="mt-2"><b>• Grid Cell</b> mejor conocidas como "Celdas", es el espacio entre dos filas adyacentes y dos columnas adyacentes.</p>
+      <center><img src="assets/img/grid-cell01.png" alt="Imagen de grid-cell"></center>
+
+      <p class="mt-2"><b>• Grid Area</b> espacio rodeado o delimitado por 4 grid lines.</p>
+      <center><img src="assets/img/grid-area01.png" alt="Imagen de grid-area"></center>
+
+      <p class="text-center lead">¡Comencemos!</p>
+
+
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Conceptos fundamentales -->

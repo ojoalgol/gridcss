@@ -1,0 +1,71 @@
+  <!-- ********** CONTENIDO PÁGINA -->
+  <section id="cont-ppal" class="">
+    <header id="cont-ppal-header">
+      <div class="contenedor">
+        <h1 id="cont-ppal-header-h1"><i class="fa fa-th-large fa-lg" aria-hidden="true"></i> CSS Grid Layout</h1>      
+      </div>      
+    </header>
+    <div class="contenedor">
+      <p>CSS Grid Layout es el sistema de diseño más poderoso disponible en CSS. Es un sistema bidimensional, lo que significa que puede manejar tanto columnas como filas, a diferencia de flexbox, que es en gran medida un sistema de 1 dimensión.</p>
+      <p>Cuando trabajas con Grid Layout aplicas reglas CSS tanto para un elemento padre (que se convierte en el Contenedor Grid) como para los elementos hijos (que se convierten en Grid Items).</p>      
+      
+      <!-- <div class="columns small-6 right" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"> -->
+
+      <!-- /////// Tabs para el contenido de cada tema -->
+      <div class="row collapse mt-4">
+        <div class="small-3 columns" data-sticky-container>
+          <div class="sticky" data-sticky data-top-anchor="1top">
+            <ul class="vertical tabs sticky" data-tabs id="cont-ppal-tabs">
+              <!-- Conceptos fundamentales -->
+              <li class="tabs-title is-active"><a href="#cont-ppal-tabs-panel1" aria-selected="true"><i class="fa fa-book fa-lg" aria-hidden="true"></i>&nbsp; Conceptos fundamentales</a></li>
+              <!-- Definiendo columnas -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel2"><i class="fa fa-barcode fa-lg" aria-hidden="true"></i>&nbsp; Definiendo columnas</a></li>
+              <!-- Definiendo filas -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true"></i>&nbsp; Filas</a></li>
+              <!-- Grids identados -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel4"><i class="fa fa-th fa-lg" aria-hidden="true"></i>&nbsp; Grids identados</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel5"><i class="fa fa-arrows fa-lg" aria-hidden="true"></i>&nbsp; Espaciado</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel6">&nbsp; Repetidores</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel7">&nbsp; Áreas de contenido</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel8">&nbsp; Tamaño columnas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel9">&nbsp; Tamaño filas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Tamaño de filas en un grid</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Nombre de líneas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Grid implicito</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Alineación de contenido</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel14">&nbsp; Alineación de filas y columnas</a></li>
+            </ul>
+            <div class="mt-1" id="abside">
+              Enrique Valerio              
+            </div>
+          </div>
+        </div><!-- /.columns -->
+
+        <div class="columns" id="1top">
+          <div class="tabs-content" data-tabs-content="cont-ppal-tabs">
+            <!-- Conceptos fundamentales -->
+            <div class="tabs-panel is-active" id="cont-ppal-tabs-panel1">
+              @include('./partials/conceptos-fundamentales.html')
+            </div>
+            <!-- Definiendo columnas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel2">
+              @include('./partials/definiendo-columnas.html')              
+            </div>
+            <!-- Definiendo filas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel3">
+              @include('./partials/definiendo-filas.html')
+            </div>
+            <!-- Grids identados y tipos de displays -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel4">
+              @include('./partials/grids-identados.html')              
+            </div>
+            <div class="tabs-panel" id="cont-ppal-tabs-panel5">
+              @include('./partials/espaciado.html')              
+            </div>
+          </div><!-- /.tabs-content -->
+        </div><!-- /.columns -->
+      </div><!-- /.row collapse -->
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. CONTENIDO PÁGINA -->

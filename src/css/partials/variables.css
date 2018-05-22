@@ -1,0 +1,30 @@
+:root{
+--colorAlert: #C70039;
+--colorAmarillo: #FFC300;
+--colorBlanco: #F8F8FF;
+--colorBlanco2: #F0F0F0;
+--colorBg: #EDEDED;
+--colorFuente: #444;
+--colorGris: #777;
+--colorGrisOscuro: #555;
+--colorGrisClaro: #CCC;
+--colorPpal: #4575af;
+--colorPpalClaro: #aac8ff;
+--colorPrimario: #09458d;
+--colorPrimarioOscuro: #063367;
+--colorSec: #FF3232;
+--colorVerde: #518f1e;
+
+--fontTexto: 'Lato',sans-serif;
+--fontTitulo: 'Raleway-Bold',serif;
+--fontLogo: 'Raleway-Bold',serif;
+
+--tra35: all .35s ease;
+--tra50: all .5s ease;
+
+--sombraSuaveDerecha: 0.2rem 0.3rem .5rem rgba(0, 0, 0, 0.3);
+--sombra1c: 0rem 0rem 1rem rgba(0, 0, 0, 0.5);
+--sombra2: 0rem 0.5rem 2rem #333333;
+--sombra3: 0rem 0.6rem 3rem #333333;
+
+}

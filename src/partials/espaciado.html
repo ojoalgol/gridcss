@@ -1,0 +1,84 @@
+  <!-- ********** Espaciado entre filas y columnas -->
+  <section id="espaciado" class="">
+    <h2>Espaciado</h2>    
+    <div class="contenedor">
+      <p>Por defecto, la grilla tiene sus celdas pegadas. Aunque es posible darle un margen a las celdas con la propiedad <code>margin</code>, existe una forma más adecuada, que evita problemas con el modelos de caja.</p>
+      <p>Para definir el espacio entre celdas, utilizamos las propiedades <code>grid-column-gap</code> y/o <code>grid-row-gap</code>.</p>
+      <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>grid-column-gap</b></td>
+            <td>Establece el tamaño de los huecos entre columnas (<em>líneas verticales</em>).</td>
+          </tr>
+          <tr>
+            <td><b>grid-row-gap</b></td>
+            <td>Establece el tamaño de los huecos entre filas (<em>líneas horizontales</em>).</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Con ellas indicaremos el tamaño de dichos espacios.</p>
+      <br>
+
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Contenido... #1&lt;/div>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5&lt;/div>        
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        grid-template-rows: auto;
+        grid-column-gap: 3rem;
+        grid-row-gap: 1rem; 
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5</div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+      </div>
+      <br>
+
+      <p>Existe una forma abreviada para las propiedades <code>grid-column-gap</code> y <code>grid-row-gap</code> y no tener que indicarlas a cada una. La propiedad sería <code>grid-gap</code> y se utiliza de la siguiente forma:</p>
+      <pre>
+      grid-gap: Fila / Columna;
+      grid-gap: 1rem 3rem;
+      </pre>
+      <p>lo cual equivale a</p>
+      <pre>
+      grid-row-gap: 1rem;
+      grid-column-gap: 3rem;
+      </pre>
+
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

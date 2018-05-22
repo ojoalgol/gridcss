@@ -1,0 +1,23 @@
+/**********************************************
+Tipografia usada en el proyecto: tipografia.css
+***********************************************/
+@font-face {
+	font-family: 'Raleway-Bold';
+	src: url('../fonts/Raleway-Bold.eot');
+	src: local('☺'), 
+	url('../fonts/Raleway-Bold.woff') format('woff'), 
+	url('../fonts/Raleway-Bold.ttf') format('truetype'), 
+	url('../fonts/Raleway-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Lato';
+	src: local('☺'), 
+	/* src: url('../fonts/Raleway-Bold.eot'); */
+	/* url('../fonts/Raleway-Bold.woff') format('woff'),  */
+	/* url('../fonts/Raleway-Bold.svg') format('svg'), */
+	url('../fonts/Lato-Regular.ttf') format('truetype'); 
+	font-weight: normal;
+	font-style: normal;
+}

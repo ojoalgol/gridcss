@@ -1,0 +1,278 @@
+/******************************
+ESTILOS DEL TEMA: custom.css;
+*******************************/
+html {
+  font-size: 10px;
+  font-family: var(--fontTexto);
+  color: var(--colorFuente);
+}
+
+html.is-reveal-open, html.is-reveal-open body {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  color: var(--colorFuente);
+  background-color: var(--colorBg);
+  font-size: responsive 1.4rem 1.8rem;
+  font-family: var(--fontTexto);
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--colorPpal);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.bg-ppal {background: var(--colorPpal)}
+.bg-sec {background: var(--colorSec)}
+
+.button {font-size: 1.4rem;}
+.large {font-size: 1.9rem !important;}
+
+.button.success {
+  background-color: #518f1e;
+  color: var(--colorBlanco); 
+}
+.button.success:hover, .button.success:focus {
+    background-color: #417218;
+    color: var(--colorBlanco); 
+}
+.btn-expansivo {
+  @media (--mobile) {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+cite {
+  font-size: responsive 1rem 1.5rem;
+}
+
+.emergencia2 {
+  color: var(--colorGris);
+  font-size: responsive 1.4rem 1.7rem;
+}
+.color-secundario {color: var(--colorSec) !important;}
+.color-verde {color: var(--colorVerde) !important;}
+
+.contenedor {
+  margin-left: auto;
+  margin-right: auto;
+}
+.row,.contenedor {
+  max-width: 80vw !important;
+
+  @media (--laptop-x) {max-width: 85vw !important;}
+
+  @media (--laptop-s) {max-width: 90vw !important;}
+
+  @media (--tablet-h) {max-width: 90vw !important;}
+
+  @media (--tablet-v) {max-width: 95vw !important;}
+
+  @media (--mobile-x) {max-width: 97vw !important;}
+
+  @media (--mobile-s) {max-width: 97vw !important;}
+}
+
+.display-table {
+  display: table;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--colorPpal);
+  font-family: var(--fontTitulo);
+}
+h1 {
+  font-size: responsive 2.4rem 4rem;
+}
+h2 {
+  font-size: responsive 2rem 3rem;
+}
+h3 {
+  font-size: responsive 1.9rem 2.5rem;
+}
+h4 {
+  font-size: responsive 1.8rem 2.2rem;
+}
+h5 {
+  font-size: responsive 1.7rem 2rem;
+}
+h6 {
+  font-size: responsive 1.6rem 1.7rem;
+}
+
+.ir-arriba {
+  border-radius: 0.4rem;
+  display:none;
+  padding:0.7rem;
+  background:var(--colorPpal);
+  color:#fff;
+  cursor:pointer;
+  position: fixed;
+  bottom:2rem;
+  right:1rem;
+  transition: var(--tra50);
+  z-index: 100;
+}
+.ir-arriba:hover {
+  background: var(--colorSec);
+  transition: var(--tra50);
+}
+
+.label-lead {
+  color:var(--colorFuente);
+  font-size: responsive 1.3rem 1.8rem;
+  line-height: 1.4;
+}
+.label-select {
+  color:var(--colorPpal);
+  font-size: responsive 1.2rem 1.4rem;
+  line-height: 1.5;
+  margin-left: 1rem;
+}
+.legend-lead {
+  color:var(--colorGris);
+  font-family: var(--fontTitulo);
+  font-size: responsive 1.7rem 1.9rem;
+  font-weight: bold;
+}
+
+.logotipo {
+  color: var(--colorBlanco);
+  font-size: responsive 2rem 5rem;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 1px 1px 3px #333;
+}
+.logotipo2 {
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+.mb-1 {margin-bottom: 1rem;}
+.mt-1 {margin-top: 1rem;}
+.mb-2 {margin-bottom: 2rem;}
+.mt-2 {margin-top: 2rem;}
+.mb-3 {margin-bottom: 3rem;}
+.mt-3 {margin-top: 3rem;}
+.mb-4 {margin-bottom: 4rem;}
+.mt-4 {margin-top: 4rem;}
+.mb-5 {margin-bottom: 5rem;}
+.mt-5 {margin-top: 5rem;}
+.mb-6 {margin-bottom: 6rem;}
+.mt-6 {margin-top: 6rem;}
+.mb-7 {margin-bottom: 7rem;}
+.mt-7 {margin-top: 7rem;}
+.mb-8 {margin-bottom: 8rem;}
+.mt-8 {margin-top: 8rem;}
+.mb-9 {margin-bottom: 9rem;}
+.mt-9 {margin-top: 9rem;}
+.mb-10 {margin-bottom: 10rem;}
+.mt-10 {margin-top: 10rem;}
+.mb-11 {margin-bottom: 11rem;}
+.mt-11 {margin-top: 11rem;}
+.mb-12 {margin-bottom: 12rem;}
+.mt-12 {margin-top: 12rem;}
+.mb-13 {margin-bottom: 13rem;}
+.mt-13 {margin-top: 13rem;}
+.mb-14 {margin-bottom: 14rem;}
+.mt-14 {margin-top: 14rem;}
+.mb-15 {margin-bottom: 15rem;}
+.mt-15 {margin-top: 15rem;}
+.mb-16 {margin-bottom: 16rem;}
+.mt-16 {margin-top: 16rem;}
+.mb-17 {margin-bottom: 17rem;}
+.mt-17 {margin-top: 17rem;}
+.mb-18 {margin-bottom: 18rem;}
+.mt-18 {margin-top: 18rem;}
+.mb-20 {margin-bottom: 20rem;}
+.mt-20 {margin-top: 20rem;}
+
+.p-1 {padding: 1rem}
+.p-2 {padding: 2rem}
+.pb-1 {padding-bottom: 1rem;}
+.pt-1 {padding-top: 1rem;}
+.pb-2_5 {padding-bottom: 2.5rem;}
+.pt-2_5 {padding-top: 2.5rem;}
+.pb-3 {padding-bottom: 3rem;}
+.pt-3 {padding-top: 3rem;}
+.pb-5 {padding-bottom: 5rem;}
+.pt-5 {padding-top: 5rem;}
+.pb-6 {padding-bottom: 6rem}
+.pt-6 {padding-top: 6rem}
+.pb-7 {padding-bottom: 7rem}
+.pt-7 {padding-top: 7rem}
+.pb-8 {padding-bottom: 8rem}
+.pt-8 {padding-top: 8rem}
+.pb-10 {padding-bottom: 10rem;}
+.pt-10 {padding-top: 10rem;}
+
+table tbody tr {
+  border-bottom: 0;
+  background-color: var(--colorBlanco);
+}
+table tbody tr:nth-child(2n) {
+  border-bottom: 0;
+  background-color: color(var(--colorPpalClaro) lightness(90%));
+}
+table.unstriped tbody tr:nth-child(2n) {
+  border-bottom: 0;
+  background-color: transparent;
+}
+table thead tr, table tfoot tr {
+  background: var(--colorPpalClaro);
+}
+table.unstriped thead tr, table tfoot tr {
+  background: transparent;
+}
+
+.tabs-content {
+  color: var(--colorFuente);
+}
+.text-alert {color: var(--colorAlert);}
+
+.titulo2 {
+  color:var(--colorGris);
+  font-size: responsive 1.7rem 2rem;
+}
+.tooltip {
+  background-color: var(--colorBlanco);
+  border-radius: 3px;
+  color: color(var(--colorPpal) whiteness(30%));
+  font-size: 80%;
+  max-width: 25rem;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.swal2-popup .swal2-content {
+  color: var(--colorFuente) !important;
+  font-size: 1.8rem !important;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: color(var(--colorPpal) lightness(35%));
+  color: white;
+}
+.va-align {
+  display: table-cell;
+  vertical-align: middle;
+}
+/**/

@@ -1,0 +1,80 @@
+  <!-- ********** Definiendo columnas -->
+  <section id="definiendo-columnas" class="">
+    <h2>Definiendo columnas</h2>    
+    <div class="contenedor">
+      <p>Para utilizar cuadriculas <b>Grid CSS</b>, lo primero que debemos definir es lo siguiente:</p>
+      <p><b>• display: grid</b> &nbsp;&nbsp;ó&nbsp;&nbsp;  <b>display: inline-grid</b> ... para activar la cuadrícula grid hay que utilizar sobre el elemento contenedor (padre) la propiedad <code>display</code> y especificar el valor <code>grid</code> o <code>inline-grid</code>. Este valor influye en como se comportará la cuadrícula con respecto al contenido exterior.</p>
+      <p>El primero, <code>grid</code> permite que la cuadrícula aparezca encima/debajo del contenido exterior (en bloque) y el segundo de ellos, <code>inline-grid</code> permite que la cuadrícula aparezca a la izquierda/derecha (en línea) del contenido exterior.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Elemento</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><big>&nbsp;inline-grid&nbsp;</big></td>
+            <td>Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</td>
+          </tr>
+          <tr>
+            <td><big>&nbsp;grid&nbsp;</big></td>
+            <td>Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Una vez definido uno de estos dos valores para la propiedad display del elemento contenedor, hay varias formas de configurar nuestra cuadrícula grid. Comencemos con las propiedades que se aplican al elemento contenedor (padre) para definir las columnas.</p>
+      <br>
+
+      <p><b>• grid-template-columns</b> establece el tamaño de las columnas (eje horizontal).</p>
+      <p>En este ejemplo he utilizado <b>porcentajes</b> como unidad, sin embargo, también podemos utilizar otras unidades (e incluso combinarlas) como píxeles, em, rem, la palabra clave auto (que obtiene el tamaño restante) o la unidad especial fr (fraction), que simboliza una fracción de espacio restante en el grid, y la cual se expliacrá mejor más adelante. </p>
+      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre"> <b class="color-verde"><big>◀</big> Este es el "Grid Container"</b>
+        &lt;div class="hijo">Contenido... #1&lt;/div> <b class="color-verde"><big>◀</big> Estos son los "Grid Item"</b>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5&lt;/div>
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+        &lt;div class="hijo">Contenido... #9&lt;/div>
+        &lt;div class="hijo">Contenido... #10&lt;/div>
+        &lt;div class="hijo">Contenido... #11&lt;/div>
+        &lt;div class="hijo">Contenido... #12&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%; <b class="color-verde"><big>◀</big> Estos define las columnas</b>
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5</div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+        <div class="hijo">Contenido... #9</div>
+        <div class="hijo">Contenido... #10</div>
+        <div class="hijo">Contenido... #11</div>
+        <div class="hijo">Contenido... #12</div>
+      </div>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

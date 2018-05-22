@@ -1,0 +1,60 @@
+  <!-- ********** Grids identados y tipos de displays -->
+  <section id="grids-identados" class="">
+    <h2>Grids identados</h2>    
+    <div class="contenedor">
+      <p>Simplemente lo que debemos hacer es colocar en la celda seleccionada los elementos que deseamos anidar.</p>
+      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Contenido... #1&lt;/div>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5
+          &lt;div class="hijo">Sub-Contenido... #1&lt;/div> <b class="color-verde"><big>◀</big> Grilla indentada</b>
+          &lt;div class="hijo">Sub-Contenido... #2&lt;/div>
+          &lt;div class="hijo">Sub-Contenido... #3&lt;/div>
+        &lt;/div>
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        grid-template-rows: auto; 
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .hijo:nth-of-type(5) {
+        background-color: rgb(182, 202, 226);
+        display: grid; <b class="color-verde"><big>◀</big> Esto permite indentar la grilla</b>
+      }
+
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5
+          <div class="hijo">Sub-Contenido... #1</div>
+          <div class="hijo">Sub-Contenido... #2</div>
+          <div class="hijo">Sub-Contenido... #3</div>
+        </div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+      </div>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

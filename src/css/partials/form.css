@@ -1,0 +1,159 @@
+/******************************
+FORM TIPO MATERIAL STYLE: form.css;
+*******************************/
+[type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"], [type="time"], [type="url"], [type="color"], textarea {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid var(--colorGrisClaro);
+  color: var(--colorFuente);  
+  height: 3.5rem;
+  font-size: 1.6rem;
+  
+  &:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.group { 
+  position: relative; 
+  margin-bottom: 4.5rem; 
+}
+input.m {
+  background: transparent;
+  font-size: 1.6rem;
+  padding: 1rem 1rem 1rem .5rem;
+  display: block;
+  width: 100%;
+}
+
+label.m {
+  color: var(--colorGris); 
+  font-size: 1.6rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 2rem;
+  top: 0;
+  transition: 0.3s ease all; 
+}
+
+/* active state */
+input.m:focus ~ label.m, input.m:valid ~ label.m    {
+  top: -2rem;
+  font-size: 1.3rem;
+  color: var(--colorPpal);
+}
+
+/* FORM BOTTOM BARS ================================= */
+.bar {
+  position:relative; 
+  display:block; 
+  width:100%;
+}
+.bar:before, .bar:after {
+  content: '';
+  height: 2px; 
+  width: 0;
+  bottom: 1rem; 
+  position: absolute;
+  background: var(--colorPpal); 
+  transition: 0.3s ease all; 
+}
+.bar:before {left:50%;}
+.bar:after {right:50%;}
+
+/* active state */
+input.m:focus ~ .bar:before, input.m:focus ~ .bar:after {
+  width:50%;
+}
+
+/* FORM HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%; 
+  width: 10rem; 
+  top: 25%; 
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input.m:focus ~ .highlight {
+  animation: input.mHighlighter 0.3s ease;
+}
+
+/* FORM ANIMATIONS ================ */
+@keyframes input.mHighlighter {
+  from { background:var(--colorPpal); }
+  to  { width:0; background:transparent; }
+}
+
+input[type="radio"], input[type="checkbox"] {
+display: none;
+}
+label:before {
+font-family: 'FontAwesome';
+width: 2.5rem;
+display: inline-block;
+}
+input[type="radio"] + label:before  {
+content: "\f10c"; /* circle-blank */
+}
+input[type="radio"]:checked + label:before {
+content: "\f111"; /* circle */
+}
+input[type="checkbox"] + label:before {
+content: "\f096"; /* check-empty */
+font-size: large;
+}
+input[type="checkbox"]:checked + label:before {
+content: "\f046"; /* check */
+font-size: large;
+}
+
+input.normal[type="checkbox"] {
+display: inline-block;
+}
+input.normal[type="checkbox"]:checked {
+display: inline-block;
+}
+input.normal[type="radio"] {
+display: inline-block;
+}
+input.normal[type="radio"]:checked {
+display: inline-block;
+}
+input.normal[type="checkbox"] + label:before {
+content: ""; /* check-empty */
+display: none;
+}
+input.normal[type="checkbox"]:checked + label:before {
+content: ""; /* check */
+display: none;
+}
+input.normal[type="radio"] + label:before {
+content: ""; /* check-empty */
+display: none;
+}
+input.normal[type="radio"]:checked + label:before {
+content: ""; /* check */
+display: none;
+}
+
+.form-error {
+  display: none;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: normal;
+  color:var(--colorAlert);
+}
+textarea::placeholder {
+  color: var(--colorGrisOscuro);
+}
+/**/

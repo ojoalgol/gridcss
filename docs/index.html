@@ -1,0 +1,428 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Layout</title>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/foundation-icons.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/foundation.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/app.min.css" />
+</head>
+
+<body>
+	<!-- /////// Botón para ir al principio -->
+	<a class="hide-for-small-only" href="#inicio">
+	  <i class="fa fa-chevron-circle-up fa-2x ir-arriba"></i>
+	</a>
+	<!-- */Botón para ir al principio -->
+  <!-- ********** CONTENIDO PÁGINA -->
+  <section id="cont-ppal" class="">
+    <header id="cont-ppal-header">
+      <div class="contenedor">
+        <h1 id="cont-ppal-header-h1"><i class="fa fa-th-large fa-lg" aria-hidden="true"></i> CSS Grid Layout</h1>      
+      </div>      
+    </header>
+    <div class="contenedor">
+      <p>CSS Grid Layout es el sistema de diseño más poderoso disponible en CSS. Es un sistema bidimensional, lo que significa que puede manejar tanto columnas como filas, a diferencia de flexbox, que es en gran medida un sistema de 1 dimensión.</p>
+      <p>Cuando trabajas con Grid Layout aplicas reglas CSS tanto para un elemento padre (que se convierte en el Contenedor Grid) como para los elementos hijos (que se convierten en Grid Items).</p>      
+      
+      <!-- <div class="columns small-6 right" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"> -->
+
+      <!-- /////// Tabs para el contenido de cada tema -->
+      <div class="row collapse mt-4">
+        <div class="small-3 columns" data-sticky-container>
+          <div class="sticky" data-sticky data-top-anchor="1top">
+            <ul class="vertical tabs sticky" data-tabs id="cont-ppal-tabs">
+              <!-- Conceptos fundamentales -->
+              <li class="tabs-title is-active"><a href="#cont-ppal-tabs-panel1" aria-selected="true"><i class="fa fa-book fa-lg" aria-hidden="true"></i>&nbsp; Conceptos fundamentales</a></li>
+              <!-- Definiendo columnas -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel2"><i class="fa fa-barcode fa-lg" aria-hidden="true"></i>&nbsp; Definiendo columnas</a></li>
+              <!-- Definiendo filas -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true"></i>&nbsp; Filas</a></li>
+              <!-- Grids identados -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel4"><i class="fa fa-th fa-lg" aria-hidden="true"></i>&nbsp; Grids identados</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel5"><i class="fa fa-arrows fa-lg" aria-hidden="true"></i>&nbsp; Espaciado</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel6">&nbsp; Repetidores</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel7">&nbsp; Áreas de contenido</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel8">&nbsp; Tamaño columnas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel9">&nbsp; Tamaño filas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Tamaño de filas en un grid</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Nombre de líneas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Grid implicito</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Alineación de contenido</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel14">&nbsp; Alineación de filas y columnas</a></li>
+            </ul>
+            <div class="mt-1" id="abside">
+              Enrique Valerio              
+            </div>
+          </div>
+        </div><!-- /.columns -->
+
+        <div class="columns" id="1top">
+          <div class="tabs-content" data-tabs-content="cont-ppal-tabs">
+            <!-- Conceptos fundamentales -->
+            <div class="tabs-panel is-active" id="cont-ppal-tabs-panel1">
+                <!-- ********** Conceptos fundamentales -->
+  <section id="conceptos-fundamentales" class="">
+    <h2>Conceptos fundamentales</h2>    
+    <div class="contenedor">
+      <p><b>• Grid Container</b> es el elemento "Padre" que tiene un nuevo tipo de display, <code>display: grid;</code>. Nos permite colocar otras propiedades para manipular nuestro layout.</p>
+      <p><b>• Grid Item</b> son nuestro componentes, contenido, lo que vamos a manejar. Nuestras filas o columnas que vamos a mover a nuestro gusto. Es importante tomer en cuenta que <i>son hijos directos</i> de "Grid Container".</p>
+      <pre>
+      &lt;div class="wrapper"> <b class="color-verde"><big>◀</big> Este es el "Grid Container"</b>
+        &lt;div class="one">Uno&lt;/div> <b class="color-verde"><big>◀</big> Estos son los "Grid Item"</b>
+        &lt;div class="two">Dos&lt;/div>
+        &lt;div class="three">Tres&lt;/div>
+        &lt;div class="four">
+            Cuatro
+            &lt;p>Sub-item&lt;/p> <b class="color-secundario"><big>◀</big> Este no es un "Grid Item"</b>
+        &lt;/div>
+        &lt;div class="five">Cinco&lt;/div>
+        &lt;div class="six">Seis&lt;/div>
+      &lt;/div>
+      </pre>
+      <div class="wrapper mt-2">
+        <div class="one">Uno</div>
+        <div class="two">Dos</div>
+        <div class="three">Tres</div>
+        <div class="four">
+          Cuatro
+          <p>Sub-item</p>
+        </div>
+        <div class="five">Cinco</div>
+        <div class="six">Seis</div>
+      </div>
+      
+      <p class="mt-2"><b>• Grid Line</b> son las líneas divisorias horizontales y verticales. Se crean cuando se definen las columnas y filas del layout.</p>
+      <center><img src="assets/img/grid-line01.png" alt="Imagen de grid-line"></center>
+
+      <p class="mt-2"><b>• Grid Track</b> Espacio entre dos líneas adyacentes. mejor conocidos como "Filas y columnas".</p>
+      <center><img src="assets/img/grid-track01.png" alt="Imagen de grid-track"></center>
+
+      <p class="mt-2"><b>• Grid Cell</b> mejor conocidas como "Celdas", es el espacio entre dos filas adyacentes y dos columnas adyacentes.</p>
+      <center><img src="assets/img/grid-cell01.png" alt="Imagen de grid-cell"></center>
+
+      <p class="mt-2"><b>• Grid Area</b> espacio rodeado o delimitado por 4 grid lines.</p>
+      <center><img src="assets/img/grid-area01.png" alt="Imagen de grid-area"></center>
+
+      <p class="text-center lead">¡Comencemos!</p>
+
+
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Conceptos fundamentales -->
+            </div>
+            <!-- Definiendo columnas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel2">
+                <!-- ********** Definiendo columnas -->
+  <section id="definiendo-columnas" class="">
+    <h2>Definiendo columnas</h2>    
+    <div class="contenedor">
+      <p>Para utilizar cuadriculas <b>Grid CSS</b>, lo primero que debemos definir es lo siguiente:</p>
+      <p><b>• display: grid</b> &nbsp;&nbsp;ó&nbsp;&nbsp;  <b>display: inline-grid</b> ... para activar la cuadrícula grid hay que utilizar sobre el elemento contenedor (padre) la propiedad <code>display</code> y especificar el valor <code>grid</code> o <code>inline-grid</code>. Este valor influye en como se comportará la cuadrícula con respecto al contenido exterior.</p>
+      <p>El primero, <code>grid</code> permite que la cuadrícula aparezca encima/debajo del contenido exterior (en bloque) y el segundo de ellos, <code>inline-grid</code> permite que la cuadrícula aparezca a la izquierda/derecha (en línea) del contenido exterior.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Elemento</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><big>&nbsp;inline-grid&nbsp;</big></td>
+            <td>Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</td>
+          </tr>
+          <tr>
+            <td><big>&nbsp;grid&nbsp;</big></td>
+            <td>Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Una vez definido uno de estos dos valores para la propiedad display del elemento contenedor, hay varias formas de configurar nuestra cuadrícula grid. Comencemos con las propiedades que se aplican al elemento contenedor (padre) para definir las columnas.</p>
+      <br>
+
+      <p><b>• grid-template-columns</b> establece el tamaño de las columnas (eje horizontal).</p>
+      <p>En este ejemplo he utilizado <b>porcentajes</b> como unidad, sin embargo, también podemos utilizar otras unidades (e incluso combinarlas) como píxeles, em, rem, la palabra clave auto (que obtiene el tamaño restante) o la unidad especial fr (fraction), que simboliza una fracción de espacio restante en el grid, y la cual se expliacrá mejor más adelante. </p>
+      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre"> <b class="color-verde"><big>◀</big> Este es el "Grid Container"</b>
+        &lt;div class="hijo">Contenido... #1&lt;/div> <b class="color-verde"><big>◀</big> Estos son los "Grid Item"</b>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5&lt;/div>
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+        &lt;div class="hijo">Contenido... #9&lt;/div>
+        &lt;div class="hijo">Contenido... #10&lt;/div>
+        &lt;div class="hijo">Contenido... #11&lt;/div>
+        &lt;div class="hijo">Contenido... #12&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%; <b class="color-verde"><big>◀</big> Estos define las columnas</b>
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5</div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+        <div class="hijo">Contenido... #9</div>
+        <div class="hijo">Contenido... #10</div>
+        <div class="hijo">Contenido... #11</div>
+        <div class="hijo">Contenido... #12</div>
+      </div>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->              
+            </div>
+            <!-- Definiendo filas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel3">
+                <!-- ********** Definiendo filas -->
+  <section id="definiendo-filas" class="">
+    <h2>Definiendo filas</h2>    
+    <div class="contenedor">
+      <p>Una vez definidos el tipo de <code>display</code> y las columnas, debemos completar la estructura básica de la grilla con las filas (eje vertical).</p>
+      <br>
+      <p><b>• grid-template-rows</b> establece el tamaño de las filas (eje vertical). </p>
+      <p>Combinado las columnas y las filas en el siguiente ejemplo tenemos una cuadricula con 3 columnas (la primera con 20% de ancho, la segunda con 50% de ancho y la tercera con 30% de ancho) y con 3 filas (la primera con 15rem de alto, la segunda con 5rem de alto y la tercera con 10rem). Ahora, de acuerdo al número de ítems (elementos hijos) que tiene el contenedor grid, tenemos <b>una cuadrícula de 3x3 elementos</b>. Como el número de ítems es par, la última celda de la cuadrícula se queda vacía.</p>
+      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Contenido... #1&lt;/div>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5&lt;/div>
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        grid-template-rows: 15rem 5rem 10rem; <b class="color-verde"><big>◀</big> Esto define las filas</b>
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5</div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+      </div>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->
+            </div>
+            <!-- Grids identados y tipos de displays -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel4">
+                <!-- ********** Grids identados y tipos de displays -->
+  <section id="grids-identados" class="">
+    <h2>Grids identados</h2>    
+    <div class="contenedor">
+      <p>Simplemente lo que debemos hacer es colocar en la celda seleccionada los elementos que deseamos anidar.</p>
+      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Contenido... #1&lt;/div>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5
+          &lt;div class="hijo">Sub-Contenido... #1&lt;/div> <b class="color-verde"><big>◀</big> Grilla indentada</b>
+          &lt;div class="hijo">Sub-Contenido... #2&lt;/div>
+          &lt;div class="hijo">Sub-Contenido... #3&lt;/div>
+        &lt;/div>
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        grid-template-rows: auto; 
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .hijo:nth-of-type(5) {
+        background-color: rgb(182, 202, 226);
+        display: grid; <b class="color-verde"><big>◀</big> Esto permite indentar la grilla</b>
+      }
+
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5
+          <div class="hijo">Sub-Contenido... #1</div>
+          <div class="hijo">Sub-Contenido... #2</div>
+          <div class="hijo">Sub-Contenido... #3</div>
+        </div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+      </div>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->              
+            </div>
+            <div class="tabs-panel" id="cont-ppal-tabs-panel5">
+                <!-- ********** Espaciado entre filas y columnas -->
+  <section id="espaciado" class="">
+    <h2>Espaciado</h2>    
+    <div class="contenedor">
+      <p>Por defecto, la grilla tiene sus celdas pegadas. Aunque es posible darle un margen a las celdas con la propiedad <code>margin</code>, existe una forma más adecuada, que evita problemas con el modelos de caja.</p>
+      <p>Para definir el espacio entre celdas, utilizamos las propiedades <code>grid-column-gap</code> y/o <code>grid-row-gap</code>.</p>
+      <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>grid-column-gap</b></td>
+            <td>Establece el tamaño de los huecos entre columnas (<em>líneas verticales</em>).</td>
+          </tr>
+          <tr>
+            <td><b>grid-row-gap</b></td>
+            <td>Establece el tamaño de los huecos entre filas (<em>líneas horizontales</em>).</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Con ellas indicaremos el tamaño de dichos espacios.</p>
+      <br>
+
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Contenido... #1&lt;/div>
+        &lt;div class="hijo">Contenido... #2&lt;/div>
+        &lt;div class="hijo">Contenido... #3&lt;/div>
+        &lt;div class="hijo">Contenido... #4&lt;/div>
+        &lt;div class="hijo">Contenido... #5&lt;/div>        
+        &lt;div class="hijo">Contenido... #6&lt;/div>
+        &lt;div class="hijo">Contenido... #7&lt;/div>
+        &lt;div class="hijo">Contenido... #8&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        grid-template-rows: auto;
+        grid-column-gap: 3rem;
+        grid-row-gap: 1rem; 
+      }
+
+      .hijo {
+        background-color: rgb(255, 243, 204);
+        border: 1px solid #777;
+        padding: 10px;
+        text-align: center;
+      }
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo">Contenido... #1</div>
+        <div class="hijo">Contenido... #2</div>
+        <div class="hijo">Contenido... #3</div>
+        <div class="hijo">Contenido... #4</div>
+        <div class="hijo">Contenido... #5</div>
+        <div class="hijo">Contenido... #6</div>
+        <div class="hijo">Contenido... #7</div>
+        <div class="hijo">Contenido... #8</div>
+      </div>
+      <br>
+
+      <p>Existe una forma abreviada para las propiedades <code>grid-column-gap</code> y <code>grid-row-gap</code> y no tener que indicarlas a cada una. La propiedad sería <code>grid-gap</code> y se utiliza de la siguiente forma:</p>
+      <pre>
+      grid-gap: Fila / Columna;
+      grid-gap: 1rem 3rem;
+      </pre>
+      <p>lo cual equivale a</p>
+      <pre>
+      grid-row-gap: 1rem;
+      grid-column-gap: 3rem;
+      </pre>
+
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->              
+            </div>
+          </div><!-- /.tabs-content -->
+        </div><!-- /.columns -->
+      </div><!-- /.row collapse -->
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. CONTENIDO PÁGINA -->
+    <!-- ************* CORE JS -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/sweetalert2.all.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/what-input.js"></script>
+    <script src="assets/js/foundation.min.js"></script>
+    <script src="assets/js/coordenadas.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiPl8qyIqEU8MWTi7W3kArAhlv4VogU1I&callback=initMap"
+        async defer></script>
+
+    <script src="assets/js/emergencias.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>
+
+  

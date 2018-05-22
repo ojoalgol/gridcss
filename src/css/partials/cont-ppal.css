@@ -1,0 +1,40 @@
+/******************************
+ESTILOS CONTENIDO PPAL: cont-ppal.css;
+*******************************/
+#cont-ppal {
+
+	& #abside {
+		background: var(--colorPrimario);
+		border-radius: .7rem 0 0 .7rem;
+		color: var(--colorBlanco);
+		padding: 1.5rem;
+		height: 27vh;
+		width: 100%;
+	}
+
+	& .tabs > li {
+		background-color: var(--colorPrimarioOscuro);
+		border-radius: .7rem 0 0 .7rem;
+		margin-bottom: 1px;
+
+		& a {
+			color: var(--colorBlanco);
+			font-size: responsive 1.6rem 1.8rem;
+			
+		}
+	}
+
+	& .tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+		background: color(var(--colorPrimario) lightness(35%));
+		border-radius: .7rem 0 0 .7rem;
+		color: var(--colorBlanco);
+		outline: none;
+	}
+	& .tabs-title > a:hover {
+		background: color(var(--colorPrimario) lightness(42%));
+		border-radius: .7rem 0 0 .7rem;
+		color: var(--colorBlanco);
+		outline: none;
+	}	
+}
+/**/

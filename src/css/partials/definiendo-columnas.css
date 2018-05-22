@@ -1,0 +1,19 @@
+/******************************
+ESTILOS CONTENIDO DEFINIENDO COLUMNAS: definiendo-columnas.css;
+*******************************/
+#definiendo-columnas {
+	padding: 2rem;
+	
+	& .padre {
+		display: grid;
+		grid-template-columns: 20% 50% 30%;
+
+	}
+	& .hijo {
+	  background-color: color(var(--colorAmarillo) lightness(80%));
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	  text-align: center;
+	}	
+}
+/**/

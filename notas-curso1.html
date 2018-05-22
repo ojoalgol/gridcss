@@ -1,0 +1,186 @@
+<!--
+  Grid Container: Elemento Padre donde se asigna un {display: grid;}
+  Grid Item: Hijos directos de un Grid Container (no se aplica a .sub-item)
+-->
+<divclass="container">
+  <divclass="item item-1"></div>
+  <divclass="item item-2">
+    <pclass="sub-item"></p>
+  </div>
+  <divclass="item item-3"></div>
+</div>
+
+<!--
+Grid Line: Lineas divisorias horizontales y verticales (incluido las lineas que lo contiene)
+-->
+---------------------
+|     |       *     |
+|     |       *     |
+|     |       *     |
+---------------------
+|     |       *     |
+|     |       *     |
+|_____|_______*_____|
+<!--
+Grid Track: Espacio entre dos líneas adyacentes, tambien son consideradas filas y columnas
+-->
+---------------------
+|     |       |     |
+|     |       |     |
+---------------------
+|*****|*******|*****|
+|*****|*******|*****|
+---------------------
+
+<!--
+Grid Cell: Espacio entre dos filas adyacentes y 2 columnas adyacentes
+-->
+---------------------
+|     |*******|     |
+|     |*******|     |
+---------------------
+|     |       |     |
+|     |       |     |
+---------------------
+
+<!--
+Grid Area: Espacio rodeado por 4 Grid Lines (Lineas exteriores)
+-->
+---------------------
+|*****|*******|     |
+|*****|*******|     |
+---------------------
+|*****|*******|     |
+|*****|*******|     |
+---------------------
+
+<!--
+Para el Container
+-->
+<style>
+  .container {
+    /*Primero definimos al padre como grid*/
+    display: grid;
+
+    /*Definimos explicitamente cuantas columnas tendrá el grid*/
+    grid-template-columns: 200px200px200px;
+    /* grid-template-columns: repeat(auto-fill, 250px); */
+    /*Definimos explicitamente cuantas filas tendrá el grid*/
+    grid-template-rows: 100px100px;
+    /*Forma resumida de grid-template-rows y grid-template-columns*/
+    grid-template: 18%150px300px / 50%100px100px;
+
+    /*Espaciado entre celdas en filas y columnas*/
+    grid-row-gap: 50px;
+    grid-column-gap: 30px;
+    /*
+      Forma resumida
+    grid-gap: filas columnas;
+    grid-gap: 10px 100px;
+    */
+
+    /*La funcion minmax controla el responsive, cuando el ancho sea grande el maximo es 1fr y cuando el ancho sea minimo llega a 100px*/
+    grid-template: 300px100px100px / repeat(4, minmax(100px, 1fr));
+    /*Tambien podemos decir que una columna sea minmax y las otras que sean de diferente medida*/
+    grid-template: 300px100px100px / minmax(220px, 1fr) 1fr 1fr 1fr;
+
+    /*
+      Es importante en grid area que coloquemos el mismo número de columnas en todas las filas
+      ["nombreColumna1 nombreColumna2"]=>Fila1 ["nombreColumna1 nombreColumna2"]=>Fila2 ["nombreColumna1 nombreColumna2"]=>Fila3
+    */
+    grid-template-areas: "header header""left content""footer footer";
+
+    /*
+      No es una propiedad de las grillas, pero es importante saber que si colocamos esto
+      los grids (en las filas) se acomodarán todo lo que puedan en lo alto del dispositivo
+    */
+    height: 100vh;
+
+    /*Se puede nombrar las lineas de las columnas*/
+    grid-template-columns: [inicio] 1fr [linea2] 1fr [linea3] 1fr [destacado-end] 1fr [linea5] 1fr [destacado2-end] 1fr [linea7] 1fr [final];
+    /*Se puede nombrar las lineas de las filas*/
+    grid-template-rows: [inicio] 200px [linea2] 200px [final];
+
+    /* Manejando los grids implicitos */
+    /*las celdas que no fueron mencionadas explicitamente las podemos controlar con...
+      grid-auto-flow: row; Valor por defecto
+      grid-auto-flow: column;
+      grid-auto-columns: [es igual a grid-template-columns]; Manejando el patron de los grids implicitos
+    */
+    grid-auto-columns: 200px100px;
+    grid-auto-rows: 50px100px;
+
+    /*Alineando Items
+      justify-items | align-items: start end center stretch;
+    */
+    justify-items: center;
+    align-items: center;
+
+    /*Alineando content
+      justify-content | align-content: start end center stretch space-around space-between space-evenly;
+    */
+    justify-content: center;
+    align-content: center;
+  }
+  .item {
+    /*Se puede crear grids dentro de otros grids*/
+    display: grid;
+    grid-template: 18%150px300px / 50%100px100px;
+    /*
+      Hereda la configuración del grid padre (aun no soportada)
+    display: subgrid;
+      Aun no soportada
+    display: inline-grid;
+    */
+
+    /*Importante los número se cuenta desde la primera linea exterior
+    (Columnas)  1     2       3     4
+                --------------------- 1
+                |     |       |     |
+                |     |       |     |
+                --------------------- 2
+                |     |       |     |
+                |     |       |     |
+                |_____|_______|_____| 3
+                                    (filas)
+    */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /*Forma resuminda*/
+    grid-column: 2 / span 2; /*Importante 'span' es el número de espacios, NO número de columna*/
+    grid-column: 1 / -1; /*Ocupa todas las columnas, Empieza en 1 y termina en el final (no importa el número de columnas)*/
+    /*De la misma manera se aplica a grid-row*/
+    grid-row-start: 1;
+    grid-row-end: -1;
+    /*Forma resumida*/
+    grid-row: 2 / span 3;
+  }
+
+  /*Antes de aplicar grid-area es importante que grid-template-areas esté ya asignada en el padre*/
+  .item-1 {
+    grid-area: header;
+
+    /*Si en el padre ya nombramos las lineas con grid-template-columns, solo faltaria ocuparlos*/
+    grid-column: inicio / destacado-end;
+    grid-row: inicio / final;
+  }
+  .item-2 {
+    grid-area: left;
+
+    /*Si en el padre ya nombramos las lineas con grid-template-columns, solo faltaria ocuparlos*/
+    grid-column: destacado-end / destacado2-end;
+    grid-row: inicio / final;
+  }
+  .item-3 {
+    grid-area: content;
+  }
+  .item-4 {
+    grid-area: footer;
+  }
+
+  .item:nth-of-type(5) {
+    /*Justifícate y Alíneate a ti mismo*/
+    justify-self: start;
+    align-self: start;
+  }
+</style>

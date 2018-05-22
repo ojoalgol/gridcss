@@ -1,0 +1,36 @@
+{
+  "name": "CSS Grid Layout",
+  "version": "1.0.0",
+  "description": "Ejercicio para curso de CSS Grid Layout",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caballero73/?????????????????"
+  },
+  "author": "Enrique Valerio",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/Caballero73/?????????????????/issues"
+  },
+  "homepage": "https://github.com/Caballero73/?????????????????#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.4",
+    "browser-sync": "^2.23.6",
+    "css-mqpacker": "^6.0.1",
+    "csswring": "^6.0.3",
+    "gulp": "^3.9.1",
+    "gulp-file-include": "^2.0.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.3",
+    "lost": "^8.2.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^3.0.0",
+    "rucksack-css": "^1.0.2"
+  },
+  "dependencies": {}
+}

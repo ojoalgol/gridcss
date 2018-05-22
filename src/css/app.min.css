@@ -1,0 +1,19 @@
+/*Hoja de Estilo
+* Desarrollada para el proyecto: CSS Grid Layout
+* Por: Enrique Valerio
+* Mayo 2018
+*/
+@import './partials/variables.css';
+@import './partials/mediaquery.css';
+@import './partials/tipografia.css';
+@import './partials/cont-ppal.css';
+@import './partials/conceptos-fundamentales.css';
+@import './partials/definiendo-columnas.css';
+@import './partials/definiendo-filas.css';
+@import './partials/grids-identados.css';
+@import './partials/espaciado.css';
+@import './partials/custom.css';
+
+/******************************
+MEDIA-QUERIES
+*******************************/

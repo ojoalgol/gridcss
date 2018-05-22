@@ -1,0 +1,25 @@
+/******************************
+ESTILOS CONTENIDO GRIDS INDENTADOS: grids-identados.css;
+*******************************/
+#grids-identados {
+	padding: 2rem;
+	
+	& .padre {
+		display: grid;
+		grid-template-columns: 20% 50% 30%;
+		grid-template-rows: auto; 
+
+	}
+	& .hijo {
+	  background-color: color(var(--colorAmarillo) lightness(80%));
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	  text-align: center;
+
+	  &:nth-of-type(5) {
+	  	background-color: color(var(--colorPpal) lightness(80%));
+	  	display: grid;
+	  }
+	}	
+}
+/**/

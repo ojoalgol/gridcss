@@ -1,0 +1,56 @@
+/******************************
+ESTILOS CONTENIDO CONCEPTOS FUNDAMENTALES: conceptos-fundamentales.css;
+*******************************/
+#conceptos-fundamentales {
+	padding: 2rem;
+	
+	& .wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  grid-gap: 10px;
+	  grid-auto-rows: minmax(100px, auto);
+	}
+	& .one {
+	  background-color: color(var(--colorSec) lightness(90%));
+	  grid-column: 1 / 3;
+	  grid-row: 1;
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	}
+	& .two { 
+	  background-color: color(var(--colorSec) lightness(90%));
+	  grid-column: 2 / 4;
+	  grid-row: 1 / 3;
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	}
+	& .three {
+	  background-color: color(var(--colorSec) lightness(90%));
+	  grid-column: 1;
+	  grid-row: 2 / 5;
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	}
+	& .four {
+	  background-color: color(var(--colorSec) lightness(90%));
+	  grid-column: 3;
+	  grid-row: 3;
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	}
+	& .five {
+	  background-color: color(var(--colorSec) lightness(90%));
+	  grid-column: 2;
+	  grid-row: 4;
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	}
+	& .six {
+	  background-color: color(var(--colorSec) lightness(90%));
+	  grid-column: 3;
+	  grid-row: 4;
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	}	
+}
+/**/
