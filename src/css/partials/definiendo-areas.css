@@ -1,0 +1,20 @@
+/******************************
+ESTILOS CONTENIDO DEFINIENDO FILAS: definiendo-areas.css;
+*******************************/
+#definiendo-areas {
+	padding: 2rem;
+	
+	& .padre {
+		display: grid;
+		grid-template-columns: 20% 50% 30%;
+		grid-template-rows: 15rem 5rem 10rem; 
+
+	}
+	& .hijo {
+	  background-color: color(var(--colorAmarillo) lightness(80%));
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	  text-align: center;
+	}	
+}
+/**/

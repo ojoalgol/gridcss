@@ -1,0 +1,52 @@
+/******************************
+ESTILOS CONTENIDO REPETIDORES: repetidores.css;
+*******************************/
+#repetidores {
+	padding: 2rem;
+	
+	& .padre {
+		display: grid;
+		grid-template-columns: 20% repeat(2, 40%);
+		grid-template-rows: repeat(2, 5rem 10rem);
+		grid-gap: .5rem;
+
+	}
+	& .hijo {
+	  background-color: color(var(--colorAmarillo) lightness(80%));
+	  border: 1px solid var(--colorGris);
+	  padding:  1rem;
+	  text-align: center;
+	}
+
+	#minmax {
+		& .padre {
+			display: grid;
+			grid-template-columns: minmax(200px, 33.333%) repeat(2, minmax(10px, 33.333%));
+			grid-template-rows: auto;
+			grid-gap: .5rem;
+
+		}
+		& .hijo {
+		  background-color: color(var(--colorAmarillo) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+		}
+	}	
+	#fr1 {
+		& .padre {
+			display: grid;
+			grid-template-columns: 1fr 2fr .5fr;
+			grid-template-rows: auto;
+			grid-gap: .5rem;
+
+		}
+		& .hijo {
+		  background-color: color(var(--colorAmarillo) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+		}
+	}	
+}
+/**/

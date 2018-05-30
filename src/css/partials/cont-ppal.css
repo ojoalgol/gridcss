@@ -3,12 +3,16 @@ ESTILOS CONTENIDO PPAL: cont-ppal.css;
 *******************************/
 #cont-ppal {
 
+	& #abside-cont {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		height: 98vh;
+	}
 	& #abside {
 		background: var(--colorPrimario);
 		border-radius: .7rem 0 0 .7rem;
 		color: var(--colorBlanco);
 		padding: 1.5rem;
-		height: 27vh;
 		width: 100%;
 	}
 

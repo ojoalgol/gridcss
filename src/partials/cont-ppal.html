@@ -15,7 +15,7 @@
       <!-- /////// Tabs para el contenido de cada tema -->
       <div class="row collapse mt-4">
         <div class="small-3 columns" data-sticky-container>
-          <div class="sticky" data-sticky data-top-anchor="1top">
+          <div class="sticky" data-sticky data-top-anchor="1top" id="abside-cont">
             <ul class="vertical tabs sticky" data-tabs id="cont-ppal-tabs">
               <!-- Conceptos fundamentales -->
               <li class="tabs-title is-active"><a href="#cont-ppal-tabs-panel1" aria-selected="true"><i class="fa fa-book fa-lg" aria-hidden="true"></i>&nbsp; Conceptos fundamentales</a></li>
@@ -25,9 +25,12 @@
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true"></i>&nbsp; Filas</a></li>
               <!-- Grids identados -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel4"><i class="fa fa-th fa-lg" aria-hidden="true"></i>&nbsp; Grids identados</a></li>
+              <!-- Espaciado entre filas y columnas -->              
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel5"><i class="fa fa-arrows fa-lg" aria-hidden="true"></i>&nbsp; Espaciado</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel6">&nbsp; Repetidores</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel7">&nbsp; Áreas de contenido</a></li>
+              <!-- Repetidores, unidades de medida y funciones -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel6"><i class="fa fa-repeat fa-lg" aria-hidden="true"></i>&nbsp; Repetidores</a></li>
+              <!-- Definiendo areas de contenido -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel7"><i class="fa fa-table fa-lg" aria-hidden="true"></i>&nbsp; Áreas de contenido</a></li>
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel8">&nbsp; Tamaño columnas</a></li>
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel9">&nbsp; Tamaño filas</a></li>
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Tamaño de filas en un grid</a></li>
@@ -60,8 +63,17 @@
             <div class="tabs-panel" id="cont-ppal-tabs-panel4">
               @include('./partials/grids-identados.html')              
             </div>
+            <!-- Espaciado entre filas y columnas -->
             <div class="tabs-panel" id="cont-ppal-tabs-panel5">
               @include('./partials/espaciado.html')              
+            </div>
+            <!-- Repetidores, unidades de medida y funciones -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel6">
+              @include('./partials/repetidores.html')              
+            </div>
+            <!-- Definiendo areas de contenido -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel7">
+              @include('./partials/definiendo-areas.html')              
             </div>
           </div><!-- /.tabs-content -->
         </div><!-- /.columns -->

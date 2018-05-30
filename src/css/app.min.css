@@ -3,15 +3,23 @@
 * Por: Enrique Valerio
 * Mayo 2018
 */
+/* CSS Externos */
+@import './font-awesome.css';
+@import './foundation-icons.css';
+@import './foundation.min.css';
+@import './select2.min.css';
+/*CSS del Tema*/
 @import './partials/variables.css';
 @import './partials/mediaquery.css';
 @import './partials/tipografia.css';
 @import './partials/cont-ppal.css';
 @import './partials/conceptos-fundamentales.css';
+@import './partials/definiendo-areas.css';
 @import './partials/definiendo-columnas.css';
 @import './partials/definiendo-filas.css';
 @import './partials/grids-identados.css';
 @import './partials/espaciado.css';
+@import './partials/repetidores.css';
 @import './partials/custom.css';
 
 /******************************
