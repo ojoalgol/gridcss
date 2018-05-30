@@ -1,20 +1,46 @@
 /******************************
-ESTILOS CONTENIDO DEFINIENDO FILAS: definiendo-areas.css;
+ESTILOS CONTENIDO DEFINIENDO AREAS: definiendo-areas.css;
 *******************************/
 #definiendo-areas {
 	padding: 2rem;
 	
 	& .padre {
 		display: grid;
-		grid-template-columns: 20% 50% 30%;
-		grid-template-rows: 15rem 5rem 10rem; 
+		grid-template-columns: 1fr 3fr;
+		grid-template-rows: 1fr 8fr 1fr; 
+		grid-template-areas: "head head"
+		                     "aside main"
+		                     "footer footer";
+		height: 70vh;
+
+		@media (--mobile) {
+			grid-template-columns: 0 1fr;
+		}
 
 	}
 	& .hijo {
-	  background-color: color(var(--colorAmarillo) lightness(80%));
 	  border: 1px solid var(--colorGris);
 	  padding:  1rem;
 	  text-align: center;
-	}	
+	}
+
+	& .head {
+		grid-area:head;
+		color:var(--colorBlanco);
+		background:var(--colorPrimario);
+	}
+	& .aside {
+		grid-area:aside;
+		background:var(--colorSec);
+	}
+	& .main { 
+		grid-area:main; 
+		background:var(--colorVerde);		
+	}
+	& .footer {
+		grid-area:footer;
+		background:var(--colorAmarillo);
+	}
+	
 }
 /**/

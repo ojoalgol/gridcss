@@ -537,105 +537,49 @@
           </tr>
         </tbody>
       </table>
-      <pre>
+      <p>De esta manera, es muy fácil crear una grilla totalmente personalizada con sólo unas cuantas líneas de CSS:</p>
+      <pre>      
       <b>HTML</b>
-      &lt;div class="padre"> <b class="color-verde"><big>◀</big> Este es el "Grid Container"</b>
-        &lt;div class="hijo">Contenido... #1&lt;/div> <b class="color-verde"><big>◀</big> Estos son los "Grid Item"</b>
-        . . .
-        &lt;div class="hijo">Contenido... #12&lt;/div>
+      &lt;div class="padre mt-2">
+        &lt;div class="hijo head">Cabecera&lt;/div> 
+        &lt;div class="hijo aside">Aside&lt;/div>
+        &lt;div class="hijo main">Contenido&lt;/div>
+        &lt;div class="hijo footer">Footer o pié&lt;/div>
       &lt;/div>
 
       <b>CSS</b>
       .padre {
         display: grid;
-        grid-template-columns: 20% repeat(2, 40%);
-        grid-template-rows: repeat(2, 5rem 10rem); <b class="color-verde"><big>◀</big> Uso de "repeat"</b>
-        grid-gap: .5rem;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 8fr 1fr;
+        grid-template-areas: "head head" 
+                             "aside main" 
+                             "footer footer";
+        height: 70vh;
       }
 
       .hijo {
-        background-color: rgb(255, 243, 204);
         border: 1px solid #777;
         padding: 10px;
         text-align: center;
       }
+      <b class="color-verde"><big>◀</big> cada item debe tener una clase propia</b>
+
       </pre>
+
       <div class="padre mt-2">
-        <div class="hijo">Contenido... #1</div>
-        <div class="hijo">Contenido... #2</div>
-        <div class="hijo">Contenido... #3</div>
-        <div class="hijo">Contenido... #4</div>
-        <div class="hijo">Contenido... #5</div>
-        <div class="hijo">Contenido... #6</div>
-        <div class="hijo">Contenido... #7</div>
-        <div class="hijo">Contenido... #8</div>
-        <div class="hijo">Contenido... #9</div>
-        <div class="hijo">Contenido... #10</div>
-        <div class="hijo">Contenido... #11</div>
-        <div class="hijo">Contenido... #12</div>
+        <div class="hijo head">Cabecera</div>
+        <div class="hijo aside">Aside</div>
+        <div class="hijo main">Contenido</div>
+        <div class="hijo footer">Footer o pié</div>
       </div>
       <br>
-      <p>En el ejemplo tenemos contenedor grid con 12 ítems hijos de <strong>3 columnas</strong> (<em>la primera de 20% de ancho, la segunda y tercera de 40% de ancho</em>). Por otro lado, tiene <strong>2 filas</strong> (<em>la primera de 5rem de alto, y la segunda de 10rem de alto</em>). En el caso de tener más de 6 ítems hijos el patrón se repite, tal como se puede ver.</p>
-      <br>
-      <p><b>• minmax ()</b> define un rango de tamaño mayor o igual al <code>min (mínimo)</code> y menor o igual que el <code>max (máximo)</code>. Veamos en siguiente ejemplo:</p>
-      <pre>
-      .padre {
-        display: grid;
-        grid-template-columns: minmax(200px, 33.333%) minmax(10px, 33.333%) minmax(10px, 33.333%);
-        grid-template-rows: auto;
-        grid-gap: .5rem;
-      }
-      </pre>
-      <div id="minmax">
-        <div class="padre mt-2">
-          <div class="hijo">Contenido... #1</div>
-          <div class="hijo">Contenido... #2</div>
-          <div class="hijo">Contenido... #3</div>
-          <div class="hijo">Contenido... #4</div>
-          <div class="hijo">Contenido... #5</div>
-          <div class="hijo">Contenido... #6</div>
-          <div class="hijo">Contenido... #7</div>
-          <div class="hijo">Contenido... #8</div>
-          <div class="hijo">Contenido... #9</div>
-          <div class="hijo">Contenido... #10</div>
-          <div class="hijo">Contenido... #11</div>
-          <div class="hijo">Contenido... #12</div>
-        </div>
-      </div>
-      <br>
-      <p>Con esto tenemos una grilla de filas que se ajustan automáticamente al contenido y tres columnas, donde la primera tendrá un ancho mínimo de 200px y un máximo de 33.333%, las otras dos tendrán un mínimo de 10px y un máximo de 33.333%. Esto lógicamente se nota al disminuir el ancho disponible en la pantalla.</p>
-      <p>Podemos combinar <b>minmax</b> con <code>repeat()</code>, obteniendo el mismo resultado:</p>
-      <pre>
-      .padre {
-        display: grid;
-        grid-template-columns: minmax(200px, 33.333%) repeat(2, minmax(10px, 33.333%));
-        grid-template-rows: auto;
-        grid-gap: .5rem;
-      }
-      </pre>
-      <br>
-      <p><p><b>• Unidades de medida</b> ... CSS Grid permite la utilización de distintas unidades (tales como px, rem, em y/o %) para definir anchos, altos y espaciados, incluso, dentro de una misma propiedad.</p>
-      <p>Sin embargo crear una grilla utilizando sólo medidas estáticas como pixeles puede resultar poco flexible. CSS Grid otorga una nueva unidad de medida llamada <code>fr</code>, alias de fracción.</p>
-      <p>Veamos en el siguiente ejemplo como podemos usarla:</p>
-      <pre>
-      .padre {
-        display: grid;
-        grid-template-columns: 1fr 2fr .5fr;
-        grid-template-rows: auto;
-        grid-gap: .5rem;
-      }
-      </pre>
-      <div id="fr1">
-        <div class="padre mt-2">
-          <div class="hijo">Contenido... #1</div>
-          <div class="hijo">Contenido... #2</div>
-          <div class="hijo">Contenido... #3</div>
-          <div class="hijo">Contenido... #4</div>
-          <div class="hijo">Contenido... #5</div>
-        </div>
-      </div>
-      <br>
-      <p>Aquí hemos definido que esta grilla tenga tres columnas, la primera ocupará todo el ancho de una fracción del espacio horizontal disponible, la segunda de dos fracciones y la tercera de medía fracción. Está unidada de medida la podemos combinar con la ya conocidas.</p>
+      
+      <p>En la propiedad <code>grid-template-areas</code>, también podemos indicar una <strong>palabra clave</strong> en lugar de indicar el nombre del área:</p>
+      <ul>
+        <li>La palabra clave <strong>none</strong>: Indica que no se colocará ninguna celda en esta posición.</li>
+        <li>Uno o más puntos (<em>.</em>): Indica que se colocará una celda vacía en esta posición.</li>
+      </ul>
       <br>
     </div><!-- /.contenedor -->
   </section>

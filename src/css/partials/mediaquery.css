@@ -1,6 +1,6 @@
 @custom-media --mobile-s (width >= 0px) and (width <= 330px);
-@custom-media --mobile (width >= 0px) and (width <= 544px);
 @custom-media --mobile-x (width >= 331px) and (width <= 544px);
+@custom-media --mobile (width >= 0px) and (width <= 544px);
 @custom-media --tablet-v (width >= 545px) and (width <= 768px);
 @custom-media --tablet-h (width >= 769px) and (width <= 1024px);
 @custom-media --laptop-s (width >= 1025px) and (width <= 1290px);
