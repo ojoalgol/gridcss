@@ -15,6 +15,14 @@ ESTILOS CONTENIDO PPAL: cont-ppal.css;
 		padding: 1.5rem;
 		width: 100%;
 	}
+	#cont-ppal-tabs {
+
+		& li a{font-size: responsive 1.1rem 1.6rem;}
+		
+		& i {@media (--mobile){display: none;}}
+		
+		& i {@media (--tablet-v){display: none;}}
+	}
 
 	& .tabs > li {
 		background-color: var(--colorPrimarioOscuro);

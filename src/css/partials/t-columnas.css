@@ -3,17 +3,99 @@ ESTILOS CONTENIDO DEFINIENDO TAMAÑO COLUMNAS: t-columnas.css;
 *******************************/
 #t-columnas {
 	padding: 2rem;
-	
-	& .padre {
-		display: grid;
-		grid-template-columns: 20% 50% 30%;
 
+	& #ejemplo1 {
+		font-size: responsive 1rem 1.4rem;
+
+		& .padre {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(3, auto);
+			grid-gap: 1rem 1rem;
+		}
+		& .hijo {
+		  background-color: color(var(--colorAmarillo) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+
+			&:nth-of-type(1) {
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
+			&:nth-of-type(2) {
+				grid-column-start: 4;
+				grid-column-end: 5;
+			}	
+			&:nth-of-type(3) {
+				grid-column-start: 1;
+				grid-column-end: 5;
+			}		
+		}
 	}
-	& .hijo {
-	  background-color: color(var(--colorAmarillo) lightness(80%));
-	  border: 1px solid var(--colorGris);
-	  padding:  1rem;
-	  text-align: center;
+
+	& #ejemplo2 {
+		font-size: responsive 1rem 1.4rem;
+
+		& .padre {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(3, auto);
+			grid-gap: 1rem 1rem;
+		}
+		& .hijo {
+		  background-color: color(var(--colorVerde) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+
+			&:nth-of-type(1) {
+				grid-column-start: 1;
+				grid-column-end: span 2;
+			}
+			&:nth-of-type(2) {
+				grid-column-start: 4;
+				grid-column-end: span 1;
+			}	
+			&:nth-of-type(3) {
+				grid-column-start: 1;
+				grid-column-end: span 4;
+			}	
+			&:nth-of-type(4) {
+				grid-column-start: 1;
+				grid-column-end: -1;
+			}		
+		}
+	}
+
+	& #ejemplo3 {
+		font-size: responsive 1rem 1.4rem;
+
+		& .padre {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(3, auto);
+			grid-gap: 1rem 1rem;
+		}
+		& .hijo {
+		  background-color: color(var(--colorSec) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+
+			&:nth-of-type(1) {
+				grid-column: 1 / span 2;
+			}
+			&:nth-of-type(2) {
+				grid-column: 4 / span 1;
+			}	
+			&:nth-of-type(3) {
+				grid-column: 1 / span 4;
+			}	
+			&:nth-of-type(4) {
+				grid-column: 1 / -1;
+			}		
+		}
 	}	
 }
 /**/

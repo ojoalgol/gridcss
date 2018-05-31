@@ -79,17 +79,17 @@ cite {
 .row,.contenedor {
   max-width: 80vw !important;
 
-  @media (--laptop-x) {max-width: 85vw !important;}
+  @media (--laptop-x) {max-width: 90vw !important;}
 
-  @media (--laptop-s) {max-width: 90vw !important;}
+  @media (--laptop-s) {max-width: 95vw !important;}
 
-  @media (--tablet-h) {max-width: 90vw !important;}
+  @media (--tablet-h) {max-width: 97vw !important;}
 
-  @media (--tablet-v) {max-width: 95vw !important;}
+  @media (--tablet-v) {max-width: 98vw !important;}
 
-  @media (--mobile-x) {max-width: 97vw !important;}
+  @media (--mobile-x) {max-width: 100vw !important;}
 
-  @media (--mobile-s) {max-width: 97vw !important;}
+  @media (--mobile-s) {max-width: 100vw !important;}
 }
 
 .display-table {

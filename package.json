@@ -1,7 +1,7 @@
 {
-  "name": "Aprendiendo_JavaScrip",
+  "name": "CSS_Grid",
   "version": "1.0.0",
-  "description": "Ejercicio para curso de JavaScrip",
+  "description": "Ejercicio para curso de CSS Grid",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
