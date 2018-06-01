@@ -1,0 +1,195 @@
+  <!-- ********** Definiendo el tamaño de las filas -->
+  <section id="t-filas" class="">
+    <h2>Definiendo el tamaño de las filas</h2>    
+    <div class="contenedor">
+      <p>Es posible que deseemos componer una cuadrícula sin utilizar los parámetros vistos en la sección <strong>Definiendo areas de contenido</strong>, afortunadamente existe otra forma de hacerlo con CSS Grid.</p>
+      <p>Gracias a las siguientes propiedades, referentes a la posición de los hijos (items) en la cuadrícula, indicando donde va a comenzar o terminar una columna.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>grid-row-start</b></td>
+            <td>Indica en que columna empezará el ítem de la cuadrícula.</td>
+          </tr>
+          <tr>
+            <td><b>grid-row-end</b></td>
+            <td>Indica en que columna terminará el ítem de la cuadrícula.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Veamos el siguiente ejemplo, donde aplicaremos estas propiedades:</p>
+      <br>
+      <pre>
+      <b>HTML</b> 
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;p>1. Yo abarco tres ...&lt;/p>&lt;/div>
+        /... .../
+        &lt;div class="hijo">9. Yo soy ...&lt;/div>         
+      &lt;/div>
+
+      <b>CSS</b>      
+      .padre {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-gap: 1rem 1rem;
+      }
+
+      .hijo {background-color: #c9edab;border: 1px solid #777;padding: 1rem;text-align: center;}
+          <b class="color-verde"><big>◀</big> Se deben definir las propiedades por celdas.</b>
+      .hijo:nth-of-type(1) {grid-row-start: 1; grid-row-end: 4;}
+      .hijo:nth-of-type(2) {grid-row-start: 2; grid-row-end: 5;}
+      .hijo:nth-of-type(3) {grid-row-start: 1; grid-row-end: 3;}
+      .hijo:nth-of-type(4) {grid-row-start: 3; grid-row-end: 6;}
+          <b class="color-verde">De aquí a la última.</b>
+      .hijo:nth-of-type(5) {grid-column: 4 / 5;}
+      /... .../  
+      </pre>
+      <br>
+      <div id="ejemplo1">
+        <div class="padre">
+          <div class="hijo">
+            <p>1. Yo abarco tres filas, por que voy desde la línea 1 a la línea 4 (Grid Line).</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: 4;</b></p>
+          </div>
+          <div class="hijo">
+            <p>2. Yo también abarco tres filas, por que voy de la línea 2 a la 5... ¡Y dejé un espacio vacío!</p>
+            <p><b>grid-row-start: 2;<br>grid-row-end: 5;</b></p>
+          </div>
+          <div class="hijo">
+            <p>3. Yo abarco sólo dos fila, por que voy de la línea 1 a la 3.</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>4. Yo también abarco tres filas, por que voy de la línea 3 a la 6.</p>
+            <p><b>grid-row-start: 3;<br>grid-row-end: 6;</b></p>
+          </div>
+          <div class="hijo">5. Yo soy una celda normal</div>
+          <div class="hijo">6. Yo soy una celda normal</div>
+          <div class="hijo">7. Yo soy una celda normal</div>         
+          <div class="hijo">8. Yo soy una celda normal</div>         
+          <div class="hijo">9. Yo soy una celda normal</div> 
+        </div>
+      </div>
+      <p class="callout mt-2 mb-3">Sin embargo una grilla lograda de esta forma tiene cierta rigidez, ya que si cambiamos el número de columnas, la cuadrícula perderá su forma incial.</p>
+
+      <p><b>• span</b> ... también es posible utilizar esta palabra clave, seguida de un número, para indicar que abarque hasta X fila o celda.</p>
+      <p>Veamos un ejemplo:</p>
+      
+      <pre>
+      <b>HTML</b> 
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;p>1. Yo abarco tres ...&lt;/p>&lt;/div>
+        /... .../
+        &lt;div class="hijo">9. Yo soy ...&lt;/div>         
+      &lt;/div>
+
+      <b>CSS</b>      
+      .padre {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-gap: 1rem 1rem;
+      }
+
+      .hijo {background-color: #c9edab;border: 1px solid #777;padding: 1rem;text-align: center;}
+
+      .hijo:nth-of-type(1) {grid-row-start:1; grid-row-end:span 3;}
+      .hijo:nth-of-type(2) {grid-row-start:2; grid-row-end:span 3;}
+      .hijo:nth-of-type(3) {grid-row-start:1; grid-row-end:span 2;}
+      .hijo:nth-of-type(4) {grid-row-start:3; grid-row-end:span 3;}
+          <b class="color-verde">De aquí a la última.</b>
+      .hijo:nth-of-type(5) {grid-column: 4 / 5;}
+      /... .../
+
+      </pre>
+      <br>
+      <div id="ejemplo2">
+        <div class="padre">
+          <div class="hijo">
+            <p>1. Yo abarco tres filas, por que inicio en la línea 1 y ocupo 3 span.</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>2. Yo también abarco tres filas, por que inicio en la línea 2 y ocupo 3 span... ¡Y dejé un espacio vacío!</p>
+            <p><b>grid-row-start: 2;<br>grid-row-end: span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>3. Yo abarco sólo dos fila, por que inicio en la línea 1 y tengo 2 span.</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: span 2;</b></p>
+          </div>
+          <div class="hijo">
+            <p>4. Yo abarco tres filas, por que inicio en la línea 3 y tengo 3 span.</p>
+            <p><b>grid-row-start: 3;<br>grid-row-end: span 3;</b></p>
+          </div>
+          <div class="hijo">5. Yo soy una celda normal</div>
+          <div class="hijo">6. Yo soy una celda normal</div>
+          <div class="hijo">7. Yo soy una celda normal</div>         
+          <div class="hijo">8. Yo soy una celda normal</div>         
+          <div class="hijo">9. Yo soy una celda normal</div> 
+        </div>
+      </div>
+
+      <p class="mt-4"><b>• Atajo: grid-row</b> ... CSS Grid de nos ofrece la propiedad de atajo <code>grid-row</code> donde podemos escribir en un formato abreviado las propiedades anteriores. Su sintaxis sería la siguiente:<br>
+        <code>grid-row: &lt;grid-row-start&gt; / &lt;grid-row-end&gt;</code></p>
+      <br>
+      <pre>
+      <b>HTML</b> 
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;p>1. Yo abarco tres ...&lt;/p>&lt;/div>
+        /... .../
+        &lt;div class="hijo">8. Yo soy ...&lt;/div>         
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,auto);
+        grid-gap: 1rem 1rem;
+      }
+
+      .hijo {background-color: #f99; border: 1px solid #777;
+        padding: 1rem;text-align: center;}
+
+      .hijo:nth-of-type(1) {grid-row: 1 / span 2;}
+      .hijo:nth-of-type(2) {grid-row: 4 / span 1;}
+      .hijo:nth-of-type(3) {grid-row: 1 / span 4;}
+          <b class="color-verde">De aquí a la última.</b>
+      .hijo:nth-of-type(4) {grid-column: 4 / 5;}
+      /... .../
+      </pre>
+      <br>
+      <div id="ejemplo3">
+        <div class="padre">
+          <div class="hijo">
+            <p>1. Yo abarco tres filas, por que inicio en la línea 1 y ocupo 3 span.</p>
+            <p><b>grid-row: 1 / span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>2. Yo también abarco tres filas, por que inicio en la línea 2 y ocupo 3 span... ¡Y dejé un espacio vacío!</p>
+            <p><b>grid-row: 2 / span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>3. Yo abarco todas las fila, por que inicio en la línea 1 y <b>tengo un TRUCO</b>, usar -1 al final.</p>
+            <p><b>grid-row: 1 / -1</b></p>
+          </div>
+          <div class="hijo">4. Yo soy una celda normal</div>
+          <div class="hijo">5. Yo soy una celda normal</div>
+          <div class="hijo">6. Yo soy una celda normal</div>
+          <div class="hijo">7. Yo soy una celda normal</div>         
+          <div class="hijo">8. Yo soy una celda normal</div>         
+        </div>
+      </div>
+
+
+
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

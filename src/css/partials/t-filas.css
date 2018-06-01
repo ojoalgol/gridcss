@@ -1,0 +1,119 @@
+/******************************
+ESTILOS CONTENIDO DEFINIENDO TAMAÑO FILAS: t-filas.css;
+*******************************/
+#t-filas {
+	padding: 2rem;
+
+	& #ejemplo1 {
+		font-size: responsive 1rem 1.4rem;
+
+		& .padre {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(5, auto);
+			grid-gap: 1rem 1rem;
+		}
+		& .hijo {
+		  background-color: color(var(--colorVerde) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+		  min-height: 7rem;
+
+			&:nth-of-type(1) {
+				grid-row-start: 1;
+				grid-row-end: 4;
+			}
+			&:nth-of-type(2) {
+				grid-row-start: 2;
+				grid-row-end: 5;
+			}
+			&:nth-of-type(3) {
+				grid-row-start: 1;
+				grid-row-end: 3;
+			}
+			&:nth-of-type(4) {
+				grid-row-start: 3;
+				grid-row-end: 6;
+			}
+			&:nth-of-type(5) {grid-column: 4 / 5;}	
+			&:nth-of-type(6) {grid-column: 4 / 5;}	
+			&:nth-of-type(7) {grid-column: 4 / 5;}	
+			&:nth-of-type(8) {grid-column: 4 / 5;}	
+			&:nth-of-type(9) {grid-column: 4 / 5;}	
+		}
+	}
+
+	& #ejemplo2 {
+		font-size: responsive 1rem 1.4rem;
+
+		& .padre {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(5, auto);
+			grid-gap: 1rem 1rem;
+		}
+		& .hijo {
+		  background-color: color(var(--colorAmarillo) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+		  min-height: 7rem;
+
+			&:nth-of-type(1) {
+				grid-row-start: 1;
+				grid-row-end: span 3;
+			}
+			&:nth-of-type(2) {
+				grid-row-start: 2;
+				grid-row-end: span 3;
+			}	
+			&:nth-of-type(3) {
+				grid-row-start: 1;
+				grid-row-end: span 2;
+			}	
+			&:nth-of-type(4) {
+				grid-row-start: 3;
+				grid-row-end: span 3;
+			}
+			&:nth-of-type(5) {grid-column: 4 / 5;}	
+			&:nth-of-type(6) {grid-column: 4 / 5;}	
+			&:nth-of-type(7) {grid-column: 4 / 5;}	
+			&:nth-of-type(8) {grid-column: 4 / 5;}	
+			&:nth-of-type(9) {grid-column: 4 / 5;}		
+		}
+	}
+
+	& #ejemplo3 {
+		font-size: responsive 1rem 1.4rem;
+
+		& .padre {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(5, auto);
+			grid-gap: 1rem 1rem;
+		}
+		& .hijo {
+		  background-color: color(var(--colorSec) lightness(80%));
+		  border: 1px solid var(--colorGris);
+		  padding:  1rem;
+		  text-align: center;
+
+			&:nth-of-type(1) {
+				grid-row: 1 / span 3;
+			}
+			&:nth-of-type(2) {
+				grid-row: 2 / span 3;
+			}	
+			&:nth-of-type(3) {
+				grid-row: 1 / -1;
+			}	
+			&:nth-of-type(4) {grid-column: 4 / 5;}	
+			&:nth-of-type(5) {grid-column: 4 / 5;}	
+			&:nth-of-type(6) {grid-column: 4 / 5;}	
+			&:nth-of-type(7) {grid-column: 4 / 5;}	
+			&:nth-of-type(8) {grid-column: 4 / 5;}	
+		}
+	}	
+}
+/**/

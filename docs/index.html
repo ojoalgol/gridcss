@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid Layout</title>
   <style>
-    @charset "UTF-8";@font-face{font-family:FontAwesome;src:url(../docs/assets/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(../docs/assets/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'),url(../docs/assets/fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'),url(../docs/assets/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'),url(../docs/assets/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url(../docs/assets/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg')}div,h1,li,p,ul{margin:0;padding:0}h1{font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-style:normal;font-weight:400;color:inherit;text-rendering:optimizeLegibility}@font-face{font-family:Raleway-Bold;src:url(../docs/assets/fonts/Raleway-Bold.eot);src:local('☺'),url(../docs/assets/fonts/Raleway-Bold.woff) format('woff'),url(../docs/assets/fonts/Raleway-Bold.ttf) format('truetype'),url(../docs/assets/fonts/Raleway-Bold.svg) format('svg')}@font-face{font-family:Lato;src:local('☺'),url(../docs/assets/fonts/Lato-Regular.ttf) format('truetype')}h1{color:#4575af;font-family:Raleway-Bold,serif}@media screen and (max-width:420px){#cont-ppal #cont-ppal-tabs li a{font-size:11px;font-size:1.1rem}#cont-ppal .tabs>li a{font-size:16px;font-size:1.6rem}body{font-size:14px;font-size:1.4rem}h1{font-size:24px;font-size:2.4rem}}.fa{display:inline-block;font:14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-th-large:before{content:"\f009"}.fa-th:before{content:"\f00a"}.fa-repeat:before{content:"\f01e"}.fa-barcode:before{content:"\f02a"}.fa-book:before{content:"\f02d"}.fa-arrows:before{content:"\f047"}.fa-arrows-h:before{content:"\f07e"}.fa-bars:before{content:"\f0c9"}.fa-table:before{content:"\f0ce"}.fa-chevron-circle-up:before{content:"\f139"}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}header,section{display:block}h1{font-size:2em;margin:.67em 0}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}b{font-weight:inherit}b{font-weight:bolder}code{font-family:monospace,monospace;font-size:1em}img{border-style:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:100%}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;padding:0;background:#fefefe;font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-weight:400;line-height:1.5;color:#0a0a0a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}img{display:inline-block;vertical-align:middle;max-width:100%;height:auto;-ms-interpolation-mode:bicubic}pre{overflow:auto}div,h1,h2,li,p,pre,ul{margin:0;padding:0}p{margin-bottom:10px;margin-bottom:1rem;font-size:inherit;line-height:1.6;text-rendering:optimizeLegibility}i{font-style:italic;line-height:inherit}b{font-weight:700;line-height:inherit}h1,h2{font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-style:normal;font-weight:400;color:inherit;text-rendering:optimizeLegibility}h1{font-size:15px;font-size:1.5rem;line-height:1.4;margin-top:0;margin-bottom:5px;margin-bottom:.5rem}h2{font-size:12.5px;font-size:1.25rem;line-height:1.4;margin-top:0;margin-bottom:5px;margin-bottom:.5rem}a{line-height:inherit;color:#09458d;text-decoration:none}ul{margin-bottom:10px;margin-bottom:1rem;list-style-position:outside;line-height:1.6}li{font-size:inherit}ul{margin-left:12.5px;margin-left:1.25rem;list-style-type:disc}code{padding:1.25px 3.125px .625px;padding:.125rem .3125rem .0625rem;border:1px solid #cacaca;background-color:#e6e6e6;font-family:Consolas,Liberation Mono,Courier,monospace;font-weight:400;color:#0a0a0a}.lead{font-size:125%;line-height:1.6}.tabs{margin:0;border:1px solid #e6e6e6;background:#fefefe;list-style-type:none}.tabs:after,.tabs:before{display:table;content:' ';-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-order:1;-webkit-box-ordinal-group:2;order:1}.tabs:after{clear:both}.tabs.vertical>li{display:block;float:none;width:auto}.tabs-title{float:left}.tabs-title>a{display:block;padding:12.5px 15px;padding:1.25rem 1.5rem;font-size:7.5px;font-size:.75rem;line-height:1;color:#09458d}.tabs-title>a[aria-selected=true]{background:#e6e6e6;color:#09458d}.tabs-content{border:1px solid #e6e6e6;border-top:0;background:#fefefe;color:#0a0a0a}.tabs-panel{display:none;padding:10px;padding:1rem}.tabs-panel.is-active{display:block}.sticky{position:relative;z-index:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.row{max-width:625px;max-width:62.5rem;margin-right:auto;margin-left:auto;display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-flow:row wrap}.row.collapse>.columns{padding-right:0;padding-left:0}.columns{-ms-flex:1 1 0px;-webkit-box-flex:1;flex:1 1 0px;padding-right:9.375px;padding-right:.9375rem;padding-left:9.375px;padding-left:.9375rem;min-width:0}.small-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}#cont-ppal #abside-cont{display:grid;grid-template-rows:auto 1fr;height:98vh}#cont-ppal #abside{background:#09458d;border-radius:.7rem 0 0 .7rem;color:#f8f8ff;padding:15px;padding:1.5rem;width:100%}#cont-ppal #cont-ppal-tabs li a{font-size:calc(.85581rem + .5814vw)}#cont-ppal .tabs>li{background-color:#063367;border-radius:.7rem 0 0 .7rem;margin-bottom:1px}#cont-ppal .tabs>li a{color:#f8f8ff;font-size:calc(1.50233rem + .23256vw)}#cont-ppal .tabs-title>a[aria-selected=true]{background:#0b51a8;border-radius:.7rem 0 0 .7rem;color:#f8f8ff;outline:0}#conceptos-fundamentales{padding:20px;padding:2rem}#conceptos-fundamentales .wrapper{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:10px;grid-auto-rows:minmax(100px,auto)}#conceptos-fundamentales .one{background-color:#fcc;grid-column:1/3;grid-row:1;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .two{background-color:#fcc;grid-column:2/4;grid-row:1/3;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .three{background-color:#fcc;grid-column:1;grid-row:2/5;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .four{background-color:#fcc;grid-column:3;grid-row:3;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .five{background-color:#fcc;grid-column:2;grid-row:4;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .six{background-color:#fcc;grid-column:3;grid-row:4;border:1px solid #777;padding:10px;padding:1rem}html{font-size:10px;font-family:Lato,sans-serif;color:#444}body{color:#444;background-color:#ededed;font-size:calc(1.20465rem + .46512vw);font-family:Lato,sans-serif}a{text-decoration:none}.color-secundario{color:#ff3232!important}.color-verde{color:#518f1e!important}.contenedor{margin-left:auto;margin-right:auto}.contenedor,.row{max-width:80vw!important}h1,h2{color:#4575af;font-family:Raleway-Bold,serif}h1{font-size:calc(1.6186rem + 1.86047vw)}h2{font-size:calc(1.51163rem + 1.16279vw)}.ir-arriba{border-radius:.4rem;display:none;padding:7px;padding:.7rem;background:#4575af;color:#fff;position:fixed;bottom:20px;bottom:2rem;right:10px;right:1rem;z-index:100}.mt-1{margin-top:10px;margin-top:1rem}.mt-2{margin-top:20px;margin-top:2rem}.mt-4{margin-top:40px;margin-top:4rem}.tabs-content{color:#444}@media print,screen and (min-width:40em){h1{font-size:30px;font-size:3rem}h2{font-size:25px;font-size:2.5rem}}@media screen and (max-width:39.9375em){.hide-for-small-only{display:none!important}}@media screen and (min-width:1280px){#cont-ppal #cont-ppal-tabs li a{font-size:16px;font-size:1.6rem}#cont-ppal .tabs>li a{font-size:18px;font-size:1.8rem}body{font-size:18px;font-size:1.8rem}h1{font-size:40px;font-size:4rem}h2{font-size:30px;font-size:3rem}}@media screen and (max-width:420px){#cont-ppal #cont-ppal-tabs li a{font-size:11px;font-size:1.1rem}#cont-ppal .tabs>li a{font-size:16px;font-size:1.6rem}body{font-size:14px;font-size:1.4rem}h1{font-size:24px;font-size:2.4rem}h2{font-size:20px;font-size:2rem}}@media (min-width:0px) and (max-width:544px){#cont-ppal #cont-ppal-tabs i{display:none}}@media (min-width:545px) and (max-width:768px){#cont-ppal #cont-ppal-tabs i{display:none}.contenedor,.row{max-width:98vw!important}}@media (min-width:1291px) and (max-width:1420px){.contenedor,.row{max-width:90vw!important}}@media (min-width:1025px) and (max-width:1290px){.contenedor,.row{max-width:95vw!important}}@media (min-width:769px) and (max-width:1024px){.contenedor,.row{max-width:97vw!important}}@media (min-width:331px) and (max-width:544px){.contenedor,.row{max-width:100vw!important}}@media (min-width:0px) and (max-width:330px){.contenedor,.row{max-width:100vw!important}}
+    @charset "UTF-8";@font-face{font-family:FontAwesome;src:url(../docs/assets/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(../docs/assets/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'),url(../docs/assets/fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'),url(../docs/assets/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'),url(../docs/assets/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url(../docs/assets/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg')}div,h1,li,p,ul{margin:0;padding:0}h1{font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-style:normal;font-weight:400;color:inherit;text-rendering:optimizeLegibility}@font-face{font-family:Raleway-Bold;src:url(../docs/assets/fonts/Raleway-Bold.eot);src:local('☺'),url(../docs/assets/fonts/Raleway-Bold.woff) format('woff'),url(../docs/assets/fonts/Raleway-Bold.ttf) format('truetype'),url(../docs/assets/fonts/Raleway-Bold.svg) format('svg')}@font-face{font-family:Lato;src:local('☺'),url(../docs/assets/fonts/Lato-Regular.ttf) format('truetype')}h1{color:#4575af;font-family:Raleway-Bold,serif}@media screen and (max-width:420px){#cont-ppal #cont-ppal-tabs li a{font-size:11px;font-size:1.1rem}#cont-ppal .tabs>li a{font-size:16px;font-size:1.6rem}body{font-size:14px;font-size:1.4rem}h1{font-size:24px;font-size:2.4rem}}.fa{display:inline-block;font:14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-th-large:before{content:"\f009"}.fa-th:before{content:"\f00a"}.fa-repeat:before{content:"\f01e"}.fa-barcode:before{content:"\f02a"}.fa-book:before{content:"\f02d"}.fa-arrows:before{content:"\f047"}.fa-arrows-v:before{content:"\f07d"}.fa-arrows-h:before{content:"\f07e"}.fa-bars:before{content:"\f0c9"}.fa-table:before{content:"\f0ce"}.fa-chevron-circle-up:before{content:"\f139"}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}header,section{display:block}h1{font-size:2em;margin:.67em 0}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}b{font-weight:inherit}b{font-weight:bolder}code{font-family:monospace,monospace;font-size:1em}img{border-style:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:100%}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;padding:0;background:#fefefe;font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-weight:400;line-height:1.5;color:#0a0a0a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}img{display:inline-block;vertical-align:middle;max-width:100%;height:auto;-ms-interpolation-mode:bicubic}pre{overflow:auto}div,h1,h2,li,p,pre,ul{margin:0;padding:0}p{margin-bottom:10px;margin-bottom:1rem;font-size:inherit;line-height:1.6;text-rendering:optimizeLegibility}i{font-style:italic;line-height:inherit}b{font-weight:700;line-height:inherit}h1,h2{font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-style:normal;font-weight:400;color:inherit;text-rendering:optimizeLegibility}h1{font-size:15px;font-size:1.5rem;line-height:1.4;margin-top:0;margin-bottom:5px;margin-bottom:.5rem}h2{font-size:12.5px;font-size:1.25rem;line-height:1.4;margin-top:0;margin-bottom:5px;margin-bottom:.5rem}a{line-height:inherit;color:#09458d;text-decoration:none}ul{margin-bottom:10px;margin-bottom:1rem;list-style-position:outside;line-height:1.6}li{font-size:inherit}ul{margin-left:12.5px;margin-left:1.25rem;list-style-type:disc}code{padding:1.25px 3.125px .625px;padding:.125rem .3125rem .0625rem;border:1px solid #cacaca;background-color:#e6e6e6;font-family:Consolas,Liberation Mono,Courier,monospace;font-weight:400;color:#0a0a0a}.lead{font-size:125%;line-height:1.6}.tabs{margin:0;border:1px solid #e6e6e6;background:#fefefe;list-style-type:none}.tabs:after,.tabs:before{display:table;content:' ';-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-order:1;-webkit-box-ordinal-group:2;order:1}.tabs:after{clear:both}.tabs.vertical>li{display:block;float:none;width:auto}.tabs-title{float:left}.tabs-title>a{display:block;padding:12.5px 15px;padding:1.25rem 1.5rem;font-size:7.5px;font-size:.75rem;line-height:1;color:#09458d}.tabs-title>a[aria-selected=true]{background:#e6e6e6;color:#09458d}.tabs-content{border:1px solid #e6e6e6;border-top:0;background:#fefefe;color:#0a0a0a}.tabs-panel{display:none;padding:10px;padding:1rem}.tabs-panel.is-active{display:block}.sticky{position:relative;z-index:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.row{max-width:625px;max-width:62.5rem;margin-right:auto;margin-left:auto;display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-flow:row wrap}.row.collapse>.columns{padding-right:0;padding-left:0}.columns{-ms-flex:1 1 0px;-webkit-box-flex:1;flex:1 1 0px;padding-right:9.375px;padding-right:.9375rem;padding-left:9.375px;padding-left:.9375rem;min-width:0}.small-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}#cont-ppal #abside-cont{display:grid;grid-template-rows:auto 1fr;height:98vh}#cont-ppal #abside{background:#09458d;border-radius:.7rem 0 0 .7rem;color:#f8f8ff;padding:15px;padding:1.5rem;width:100%}#cont-ppal #cont-ppal-tabs li a{font-size:calc(.85581rem + .5814vw)}#cont-ppal .tabs>li{background-color:#063367;border-radius:.7rem 0 0 .7rem;margin-bottom:1px}#cont-ppal .tabs>li a{color:#f8f8ff;font-size:calc(1.50233rem + .23256vw)}#cont-ppal .tabs-title>a[aria-selected=true]{background:#0b51a8;border-radius:.7rem 0 0 .7rem;color:#f8f8ff;outline:0}#conceptos-fundamentales{padding:20px;padding:2rem}#conceptos-fundamentales .wrapper{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:10px;grid-auto-rows:minmax(100px,auto)}#conceptos-fundamentales .one{background-color:#fcc;grid-column:1/3;grid-row:1;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .two{background-color:#fcc;grid-column:2/4;grid-row:1/3;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .three{background-color:#fcc;grid-column:1;grid-row:2/5;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .four{background-color:#fcc;grid-column:3;grid-row:3;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .five{background-color:#fcc;grid-column:2;grid-row:4;border:1px solid #777;padding:10px;padding:1rem}#conceptos-fundamentales .six{background-color:#fcc;grid-column:3;grid-row:4;border:1px solid #777;padding:10px;padding:1rem}html{font-size:10px;font-family:Lato,sans-serif;color:#444}body{color:#444;background-color:#ededed;font-size:calc(1.20465rem + .46512vw);font-family:Lato,sans-serif}a{text-decoration:none}.color-secundario{color:#ff3232!important}.color-verde{color:#518f1e!important}.contenedor{margin-left:auto;margin-right:auto}.contenedor,.row{max-width:80vw!important}h1,h2{color:#4575af;font-family:Raleway-Bold,serif}h1{font-size:calc(1.6186rem + 1.86047vw)}h2{font-size:calc(1.51163rem + 1.16279vw)}.ir-arriba{border-radius:.4rem;display:none;padding:7px;padding:.7rem;background:#4575af;color:#fff;position:fixed;bottom:20px;bottom:2rem;right:10px;right:1rem;z-index:100}.mt-1{margin-top:10px;margin-top:1rem}.mt-2{margin-top:20px;margin-top:2rem}.mt-4{margin-top:40px;margin-top:4rem}.tabs-content{color:#444}@media print,screen and (min-width:40em){h1{font-size:30px;font-size:3rem}h2{font-size:25px;font-size:2.5rem}}@media screen and (max-width:39.9375em){.hide-for-small-only{display:none!important}}@media screen and (min-width:1280px){#cont-ppal #cont-ppal-tabs li a{font-size:16px;font-size:1.6rem}#cont-ppal .tabs>li a{font-size:18px;font-size:1.8rem}body{font-size:18px;font-size:1.8rem}h1{font-size:40px;font-size:4rem}h2{font-size:30px;font-size:3rem}}@media screen and (max-width:420px){#cont-ppal #cont-ppal-tabs li a{font-size:11px;font-size:1.1rem}#cont-ppal .tabs>li a{font-size:16px;font-size:1.6rem}body{font-size:14px;font-size:1.4rem}h1{font-size:24px;font-size:2.4rem}h2{font-size:20px;font-size:2rem}}@media (min-width:0px) and (max-width:544px){#cont-ppal #cont-ppal-tabs i{display:none}}@media (min-width:545px) and (max-width:768px){#cont-ppal #cont-ppal-tabs i{display:none}.contenedor,.row{max-width:98vw!important}}@media (min-width:1291px) and (max-width:1420px){.contenedor,.row{max-width:90vw!important}}@media (min-width:1025px) and (max-width:1290px){.contenedor,.row{max-width:95vw!important}}@media (min-width:769px) and (max-width:1024px){.contenedor,.row{max-width:97vw!important}}@media (min-width:331px) and (max-width:544px){.contenedor,.row{max-width:100vw!important}}@media (min-width:0px) and (max-width:330px){.contenedor,.row{max-width:100vw!important}}
   </style>
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="preload" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css"></noscript>
@@ -28,7 +28,8 @@
       </div>      
     </header>
     <div class="contenedor">
-      <p><span class="lead">CSS Grid Layout es el sistema de diseño más poderoso disponible en CSS.</span> Es un sistema bidimensional, lo que significa que puede manejar tanto columnas como filas, a diferencia de flexbox, que es en gran medida un sistema de 1 dimensión.</p>
+      <p><span class="lead">CSS Grid Layout es el sistema de diseño más poderoso disponible en CSS.</span><br>
+      Es un sistema bidimensional, lo que significa que puede manejar tanto columnas como filas, a diferencia de flexbox, que es en gran medida un sistema de 1 dimensión.</p>
       <p>Cuando trabajas con Grid Layout aplicas reglas CSS tanto para un elemento padre (que se convierte en el Contenedor Grid) como para los elementos hijos (que se convierten en Grid Items).</p>      
       
       <!-- <div class="columns small-6 right" data-sticky-container>
@@ -44,7 +45,7 @@
               <!-- Definiendo columnas -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel2"><i class="fa fa-barcode fa-lg" aria-hidden="true">&nbsp;</i>Definiendo columnas</a></li>
               <!-- Definiendo filas -->
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true">&nbsp;</i>Filas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true">&nbsp;</i>Definiendo Filas</a></li>
               <!-- Grids identados -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel4"><i class="fa fa-th fa-lg" aria-hidden="true">&nbsp;</i>Grids identados</a></li>
               <!-- Espaciado entre filas y columnas -->              
@@ -56,12 +57,12 @@
               <!-- Definiendo el tamaño de las columnas -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel8"><i class="fa fa-arrows-h fa-lg" aria-hidden="true">&nbsp;</i>Tamaño columnas</a></li>
               <!-- Definiendo el tamaño de las filas -->
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel9">&nbsp; Tamaño filas</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Tamaño de filas en un grid</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Nombre de líneas</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Grid implicito</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel9"><i class="fa fa-arrows-v fa-lg" aria-hidden="true">&nbsp;</i>Tamaño filas</a></li>
+              <!-- Definiendo el nombre de líneas -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Nombre de líneas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Grid implicito</a></li>
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Alineación de contenido</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel14">&nbsp; Alineación de filas y columnas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel13">&nbsp; Alineación de filas y columnas</a></li>
             </ul>
             <div class="mt-1" id="abside">
               Enrique Valerio              
@@ -643,11 +644,7 @@
       <b>HTML</b> 
       &lt;div class="padre">
         &lt;div class="hijo">&lt;p>1. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>2. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>3. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">4. Yo soy ...&lt;/div>
-        &lt;div class="hijo">5. Yo soy ...&lt;/div>
-        &lt;div class="hijo">6. Yo soy ...&lt;/div>
+        /... .../
         &lt;div class="hijo">7. Yo soy ...&lt;/div>         
       &lt;/div>
 
@@ -696,11 +693,7 @@
       <b>HTML</b> 
       &lt;div class="padre">
         &lt;div class="hijo">&lt;p>1. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>2. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>3. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>4. Yo también ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">5. Yo soy ...&lt;/div>
-        &lt;div class="hijo">6. Yo soy ...&lt;/div>
+        /... .../
         &lt;div class="hijo">7. Yo soy ...&lt;/div>         
       &lt;/div>
 
@@ -720,7 +713,7 @@
       .hijo:nth-of-type(3) {grid-column-start:1; grid-column-end:span 4;}
       .hijo:nth-of-type(4) { 
           grid-column-start: 1; 
-          grid-column-end: span -1; <b class="color-verde"><big>◀</big> Truco.</b>
+          grid-column-end: -1; <b class="color-verde"><big>◀</big> Truco.</b>
       }
 
       </pre>
@@ -756,11 +749,7 @@
       <b>HTML</b> 
       &lt;div class="padre">
         &lt;div class="hijo">&lt;p>1. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>2. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>3. Yo abarco ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">&lt;p>4. Yo también ...&lt;/p>&lt;/div>
-        &lt;div class="hijo">5. Yo soy ...&lt;/div>
-        &lt;div class="hijo">6. Yo soy ...&lt;/div>
+        /... .../
         &lt;div class="hijo">7. Yo soy ...&lt;/div>         
       &lt;/div>
 
@@ -810,6 +799,209 @@
     </div><!-- /.contenedor -->
   </section>
   <!-- /. Definiendo columnas -->              
+            </div>
+            <!-- Definiendo el tamaño de las filas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel9">
+                <!-- ********** Definiendo el tamaño de las filas -->
+  <section id="t-filas" class="">
+    <h2>Definiendo el tamaño de las filas</h2>    
+    <div class="contenedor">
+      <p>Es posible que deseemos componer una cuadrícula sin utilizar los parámetros vistos en la sección <strong>Definiendo areas de contenido</strong>, afortunadamente existe otra forma de hacerlo con CSS Grid.</p>
+      <p>Gracias a las siguientes propiedades, referentes a la posición de los hijos (items) en la cuadrícula, indicando donde va a comenzar o terminar una columna.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>grid-row-start</b></td>
+            <td>Indica en que columna empezará el ítem de la cuadrícula.</td>
+          </tr>
+          <tr>
+            <td><b>grid-row-end</b></td>
+            <td>Indica en que columna terminará el ítem de la cuadrícula.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Veamos el siguiente ejemplo, donde aplicaremos estas propiedades:</p>
+      <br>
+      <pre>
+      <b>HTML</b> 
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;p>1. Yo abarco tres ...&lt;/p>&lt;/div>
+        /... .../
+        &lt;div class="hijo">9. Yo soy ...&lt;/div>         
+      &lt;/div>
+
+      <b>CSS</b>      
+      .padre {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-gap: 1rem 1rem;
+      }
+
+      .hijo {background-color: #c9edab;border: 1px solid #777;padding: 1rem;text-align: center;}
+          <b class="color-verde"><big>◀</big> Se deben definir las propiedades por celdas.</b>
+      .hijo:nth-of-type(1) {grid-row-start: 1; grid-row-end: 4;}
+      .hijo:nth-of-type(2) {grid-row-start: 2; grid-row-end: 5;}
+      .hijo:nth-of-type(3) {grid-row-start: 1; grid-row-end: 3;}
+      .hijo:nth-of-type(4) {grid-row-start: 3; grid-row-end: 6;}
+          <b class="color-verde">De aquí a la última.</b>
+      .hijo:nth-of-type(5) {grid-column: 4 / 5;}
+      /... .../  
+      </pre>
+      <br>
+      <div id="ejemplo1">
+        <div class="padre">
+          <div class="hijo">
+            <p>1. Yo abarco tres filas, por que voy desde la línea 1 a la línea 4 (Grid Line).</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: 4;</b></p>
+          </div>
+          <div class="hijo">
+            <p>2. Yo también abarco tres filas, por que voy de la línea 2 a la 5... ¡Y dejé un espacio vacío!</p>
+            <p><b>grid-row-start: 2;<br>grid-row-end: 5;</b></p>
+          </div>
+          <div class="hijo">
+            <p>3. Yo abarco sólo dos fila, por que voy de la línea 1 a la 3.</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>4. Yo también abarco tres filas, por que voy de la línea 3 a la 6.</p>
+            <p><b>grid-row-start: 3;<br>grid-row-end: 6;</b></p>
+          </div>
+          <div class="hijo">5. Yo soy una celda normal</div>
+          <div class="hijo">6. Yo soy una celda normal</div>
+          <div class="hijo">7. Yo soy una celda normal</div>         
+          <div class="hijo">8. Yo soy una celda normal</div>         
+          <div class="hijo">9. Yo soy una celda normal</div> 
+        </div>
+      </div>
+      <p class="callout mt-2 mb-3">Sin embargo una grilla lograda de esta forma tiene cierta rigidez, ya que si cambiamos el número de columnas, la cuadrícula perderá su forma incial.</p>
+
+      <p><b>• span</b> ... también es posible utilizar esta palabra clave, seguida de un número, para indicar que abarque hasta X fila o celda.</p>
+      <p>Veamos un ejemplo:</p>
+      
+      <pre>
+      <b>HTML</b> 
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;p>1. Yo abarco tres ...&lt;/p>&lt;/div>
+        /... .../
+        &lt;div class="hijo">9. Yo soy ...&lt;/div>         
+      &lt;/div>
+
+      <b>CSS</b>      
+      .padre {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-gap: 1rem 1rem;
+      }
+
+      .hijo {background-color: #c9edab;border: 1px solid #777;padding: 1rem;text-align: center;}
+
+      .hijo:nth-of-type(1) {grid-row-start:1; grid-row-end:span 3;}
+      .hijo:nth-of-type(2) {grid-row-start:2; grid-row-end:span 3;}
+      .hijo:nth-of-type(3) {grid-row-start:1; grid-row-end:span 2;}
+      .hijo:nth-of-type(4) {grid-row-start:3; grid-row-end:span 3;}
+          <b class="color-verde">De aquí a la última.</b>
+      .hijo:nth-of-type(5) {grid-column: 4 / 5;}
+      /... .../
+
+      </pre>
+      <br>
+      <div id="ejemplo2">
+        <div class="padre">
+          <div class="hijo">
+            <p>1. Yo abarco tres filas, por que inicio en la línea 1 y ocupo 3 span.</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>2. Yo también abarco tres filas, por que inicio en la línea 2 y ocupo 3 span... ¡Y dejé un espacio vacío!</p>
+            <p><b>grid-row-start: 2;<br>grid-row-end: span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>3. Yo abarco sólo dos fila, por que inicio en la línea 1 y tengo 2 span.</p>
+            <p><b>grid-row-start: 1;<br>grid-row-end: span 2;</b></p>
+          </div>
+          <div class="hijo">
+            <p>4. Yo abarco tres filas, por que inicio en la línea 3 y tengo 3 span.</p>
+            <p><b>grid-row-start: 3;<br>grid-row-end: span 3;</b></p>
+          </div>
+          <div class="hijo">5. Yo soy una celda normal</div>
+          <div class="hijo">6. Yo soy una celda normal</div>
+          <div class="hijo">7. Yo soy una celda normal</div>         
+          <div class="hijo">8. Yo soy una celda normal</div>         
+          <div class="hijo">9. Yo soy una celda normal</div> 
+        </div>
+      </div>
+
+      <p class="mt-4"><b>• Atajo: grid-row</b> ... CSS Grid de nos ofrece la propiedad de atajo <code>grid-row</code> donde podemos escribir en un formato abreviado las propiedades anteriores. Su sintaxis sería la siguiente:<br>
+        <code>grid-row: &lt;grid-row-start&gt; / &lt;grid-row-end&gt;</code></p>
+      <br>
+      <pre>
+      <b>HTML</b> 
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;p>1. Yo abarco tres ...&lt;/p>&lt;/div>
+        /... .../
+        &lt;div class="hijo">8. Yo soy ...&lt;/div>         
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,auto);
+        grid-gap: 1rem 1rem;
+      }
+
+      .hijo {background-color: #f99; border: 1px solid #777;
+        padding: 1rem;text-align: center;}
+
+      .hijo:nth-of-type(1) {grid-row: 1 / span 2;}
+      .hijo:nth-of-type(2) {grid-row: 4 / span 1;}
+      .hijo:nth-of-type(3) {grid-row: 1 / span 4;}
+          <b class="color-verde">De aquí a la última.</b>
+      .hijo:nth-of-type(4) {grid-column: 4 / 5;}
+      /... .../
+      </pre>
+      <br>
+      <div id="ejemplo3">
+        <div class="padre">
+          <div class="hijo">
+            <p>1. Yo abarco tres filas, por que inicio en la línea 1 y ocupo 3 span.</p>
+            <p><b>grid-row: 1 / span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>2. Yo también abarco tres filas, por que inicio en la línea 2 y ocupo 3 span... ¡Y dejé un espacio vacío!</p>
+            <p><b>grid-row: 2 / span 3;</b></p>
+          </div>
+          <div class="hijo">
+            <p>3. Yo abarco todas las fila, por que inicio en la línea 1 y <b>tengo un TRUCO</b>, usar -1 al final.</p>
+            <p><b>grid-row: 1 / -1</b></p>
+          </div>
+          <div class="hijo">4. Yo soy una celda normal</div>
+          <div class="hijo">5. Yo soy una celda normal</div>
+          <div class="hijo">6. Yo soy una celda normal</div>
+          <div class="hijo">7. Yo soy una celda normal</div>         
+          <div class="hijo">8. Yo soy una celda normal</div>         
+        </div>
+      </div>
+
+
+
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->              
+            </div>
+            <!-- Definiendo el nombre de líneas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel10">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis quidem expedita quisquam ratione, dignissimos, molestiae aspernatur est perspiciatis, voluptatibus consectetur doloribus perferendis alias sequi itaque eum fugiat. Numquam, amet.
+              
             </div>
           </div><!-- /.tabs-content -->
         </div><!-- /.columns -->

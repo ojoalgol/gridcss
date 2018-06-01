@@ -23,7 +23,7 @@
               <!-- Definiendo columnas -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel2"><i class="fa fa-barcode fa-lg" aria-hidden="true">&nbsp;</i>Definiendo columnas</a></li>
               <!-- Definiendo filas -->
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true">&nbsp;</i>Filas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel3"><i class="fa fa-bars fa-lg" aria-hidden="true">&nbsp;</i>Definiendo Filas</a></li>
               <!-- Grids identados -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel4"><i class="fa fa-th fa-lg" aria-hidden="true">&nbsp;</i>Grids identados</a></li>
               <!-- Espaciado entre filas y columnas -->              
@@ -35,12 +35,12 @@
               <!-- Definiendo el tamaño de las columnas -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel8"><i class="fa fa-arrows-h fa-lg" aria-hidden="true">&nbsp;</i>Tamaño columnas</a></li>
               <!-- Definiendo el tamaño de las filas -->
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel9">&nbsp; Tamaño filas</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Tamaño de filas en un grid</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Nombre de líneas</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Grid implicito</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel9"><i class="fa fa-arrows-v fa-lg" aria-hidden="true">&nbsp;</i>Tamaño filas</a></li>
+              <!-- Definiendo el nombre de líneas -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel10">&nbsp; Nombre de líneas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Grid implicito</a></li>
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Alineación de contenido</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel14">&nbsp; Alineación de filas y columnas</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel13">&nbsp; Alineación de filas y columnas</a></li>
             </ul>
             <div class="mt-1" id="abside">
               Enrique Valerio              
@@ -81,6 +81,15 @@
             <!-- Definiendo el tamaño de las columnas -->
             <div class="tabs-panel" id="cont-ppal-tabs-panel8">
               @include('./partials/t-columnas.html')              
+            </div>
+            <!-- Definiendo el tamaño de las filas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel9">
+              @include('./partials/t-filas.html')              
+            </div>
+            <!-- Definiendo el nombre de líneas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel10">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis quidem expedita quisquam ratione, dignissimos, molestiae aspernatur est perspiciatis, voluptatibus consectetur doloribus perferendis alias sequi itaque eum fugiat. Numquam, amet.
+              <!-- @include('./partials/t-filas.html')               -->
             </div>
           </div><!-- /.tabs-content -->
         </div><!-- /.columns -->
