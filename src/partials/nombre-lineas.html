@@ -1,0 +1,57 @@
+  <!-- ********** Definiendo el nombre de las líneas -->
+  <section id="nombre-lineas" class="">
+    <h2>Definiendo el nombre de las líneas</h2>    
+    <div class="contenedor">
+      <p>Si deseamos identificar mejor nuestras líneas, y con ellos los puntos de incio y final de las grillas, podemos colocar un nombre a cada una de las mencionadas.</p>
+      <p>Esta es la sintaxis:</p>
+      <pre><strong>grid-template-columns: [inicio] medida [nombre] [final]</strong></pre>
+      <br>      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;/div>
+        &lt;div class="hijo">&lt;/div>
+        &lt;div class="hijo">&lt;/div>
+        &lt;div class="hijo">&lt;/div>
+        &lt;div class="hijo">&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: [inicio-col] 37% [segunda-col] 
+        25% [tercer-col] 15% [cuarta-col] 15% [final-col];
+        grid-template-rows: [inicio-fila] 12rem [segunda-fila]
+        12rem [final-fila];
+        grid-gap: 3px;
+      }
+      
+      .hijo {text-align: center;}
+      
+      .hijo:nth-of-type(1) {grid-column: inicio-col / segunda-col;
+        grid-row: inicio-fila / final-fila;}
+
+      .hijo:nth-of-type(2) {grid-column: segunda-col / tercer-col;
+        grid-row: inicio-fila / final-fila;}
+
+      .hijo:nth-of-type(3) {grid-column: tercer-col / final-col;
+        grid-row: inicio-fila / segunda-fila;}
+
+      .hijo:nth-of-type(4) {grid-column: tercer-col / cuarta-col;
+        grid-row: segunda-fila / final-fila;}
+
+      .hijo:nth-of-type(5) {grid-column: cuarta-col / final-col;
+        grid-row: segunda-fila / final-fila;}
+
+      </pre>
+      <div class="padre mt-2">
+        <div class="hijo"></div>
+        <div class="hijo"></div>
+        <div class="hijo"></div>
+        <div class="hijo"></div>
+        <div class="hijo"></div>
+      </div>
+      <br><br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

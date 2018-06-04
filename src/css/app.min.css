@@ -17,8 +17,9 @@
 @import './partials/definiendo-areas.css';
 @import './partials/definiendo-columnas.css';
 @import './partials/definiendo-filas.css';
-@import './partials/grids-identados.css';
 @import './partials/espaciado.css';
+@import './partials/grids-identados.css';
+@import './partials/nombre-lineas.css';
 @import './partials/repetidores.css';
 @import './partials/t-columnas.css';
 @import './partials/t-filas.css';

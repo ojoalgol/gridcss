@@ -1,0 +1,55 @@
+/******************************
+ESTILOS CONTENIDO NOMBRE LÍNEAS: nombre-lineas.css;
+*******************************/
+#nombre-lineas {
+	padding: 2rem;
+
+	& .padre {
+		display: grid;
+		grid-template-columns: [inicio-col] 37% [segunda-col] 25% [tercer-col] 15% [cuarta-col] 15% [final-col] ;
+		grid-template-rows: [inicio-fila] 12rem [segunda-fila] 12rem [final-fila];
+		grid-gap: 3px;
+	}
+	& .hijo {
+	  text-align: center;
+	  overflow: hidden;
+
+ 		&:nth-of-type(1) {
+ 			background-image: url('../img/foto-ejemplo-destacado1.jpg');
+ 			background-position: center center;
+ 			background-size: cover;
+			grid-column: inicio-col / segunda-col;
+			grid-row: inicio-fila / final-fila;
+		}
+		&:nth-of-type(2) {
+			background-image: url('../img/foto-ejemplo-destacado2.jpg');
+ 			background-position: center center;
+ 			background-size: cover;
+			grid-column: segunda-col / tercer-col;
+			grid-row: inicio-fila / final-fila;
+		}
+		&:nth-of-type(3) {
+			background-image: url('../img/foto-ejemplo-destacado3.jpg');
+			background-position: center center;
+			background-size: cover;
+			grid-column: tercer-col / final-col;
+			grid-row: inicio-fila / segunda-fila;
+		}
+		&:nth-of-type(4) {
+			background-image: url('../img/foto-ejemplo-envio.jpg');
+			background-position: center center;
+			background-size: cover;
+			grid-column: tercer-col / cuarta-col;
+			grid-row: segunda-fila / final-fila;
+		}
+		&:nth-of-type(5) {
+			background-image: url('../img/foto-ejemplo-pago.jpg');
+			background-position: center center;
+			background-size: cover;
+			grid-column: cuarta-col / final-col;
+			grid-row: segunda-fila / final-fila;
+		}
+	}
+
+}
+/**/
