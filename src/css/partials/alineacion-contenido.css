@@ -1,0 +1,120 @@
+/******************************
+ESTILOS CONTENIDO ALINEACION CONTENIDO: alineacion-contenido.css;
+*******************************/
+#alineacion-contenido {
+	padding: 2rem;
+
+	& #ejemplo1 {
+
+		& .padre {
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			height: 33vh;
+			padding: 1rem;
+		  	background-color: silver;
+
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGrisClaro);
+			padding: 1rem;
+		}
+	}
+	& #ejemplo2 {
+
+		& .padre {
+		  	background-color: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			height: 33vh;
+			padding: 1rem;
+
+			/* justify-items	start | end | center | stretch */
+			justify-items: start;
+			/* align-items	start | end | center | stretch */
+			align-items: start;
+
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGrisClaro);
+			padding: 1rem;
+		}
+	}
+	& #ejemplo3 {
+
+		& .padre {
+		  	background-color: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			height: 33vh;
+			padding: 1rem;
+
+			justify-items: center;
+			align-items: center;
+
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGrisClaro);
+			padding: 1rem;
+		}
+	}
+	& #ejemplo4 {
+
+		& .padre {
+		  	background-color: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			height: 33vh;
+			padding: 1rem;
+
+			justify-items: end;
+			align-items: end;
+
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGrisClaro);
+			padding: 1rem;
+		}
+	}	
+	& #ejemplo5 {
+
+		& .padre {
+		  	background-color: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			height: 33vh;
+			padding: 1rem;
+
+			justify-items: center;
+			align-items: center;
+			
+
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGrisClaro);
+			padding: 1rem;
+		}
+
+		& .hijo:nth-of-type(5) {
+			background-color: #09458d;
+			color: white;
+			justify-self: start;
+			align-self: start;
+		}
+	}	
+}
+/**/

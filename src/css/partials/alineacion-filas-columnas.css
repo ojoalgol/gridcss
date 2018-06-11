@@ -1,0 +1,141 @@
+/******************************
+ESTILOS CONTENIDO ALINEACION FILAS Y COLUMNAS: alineacion-filas-columnas.css;
+*******************************/
+#alineacion-filas-columnas {
+	padding: 2rem;
+
+	& #ejemplo1 {
+		/*justify-content: stretch; start | end | center | stretch | space-around | space-between | space-evenly */
+		/*align-content: stretch; 	start | end | center | stretch | space-around | space-between | space-evenly */
+
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+
+	& #ejemplo2 {
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+			justify-content: start;
+			align-content: start;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+
+	& #ejemplo3 {
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+			justify-content: center;
+			align-content: center;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+
+	& #ejemplo4 {
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+			justify-content: end;
+			align-content: end;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+
+	& #ejemplo5 {
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+			justify-content: space-around;
+			align-content: space-around;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+
+	& #ejemplo6 {
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+			justify-content: space-between;
+			align-content: space-between;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+	& #ejemplo7 {
+		& .padre {
+			background: silver;
+			display: grid;
+			grid-gap: .5rem;
+			grid-template-columns: repeat(3, 8rem);
+			grid-template-rows: repeat(2, 8rem);
+			height: 33vh;
+			width: 100%;
+			justify-content: space-evenly;
+			align-content: space-evenly;
+		}
+		& .hijo {
+		  	background-color: color(var(--colorAmarillo) lightness(80%));
+		  	border: 1px solid var(--colorGris);
+			padding: 1rem;
+		}
+	}
+	
+}
+/**/

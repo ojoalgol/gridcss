@@ -1,0 +1,163 @@
+  <!-- ********** Alineacion de contenido -->
+  <section id="alineacion-contenido" class="">
+    <h2>Alineacion de contenido</h2>    
+    <div class="contenedor">
+      <p>Hay varias propiedades permiten alinear los ítems dentro de la cuadrícula, las cuales veremos a detalle a continuación.</p>
+      <p>Comencemos por <code>justify-items</code> y <code>align-items</code>.</p>
+      <br>
+      <table class="mt-3">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valores</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lead">justify-items</td>
+            <td>start | end | center | <strong>stretch</strong></td>
+            <td>Distribuye los elementos en el eje horizontal.</td>
+          </tr>
+          <tr>
+            <td class="lead">align-items</td>
+            <td>start | end | center | <strong>stretch</strong></td>
+            <td>Distribuye los elementos en el eje vertical.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Estas propiedades se aplican sobre el elemento contenedor padre, pero afectan a los ítems hijos, por lo que actuan sobre la distribución de cada uno de los hijos.</p>
+      <br>      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Item 1&lt;/div>
+        /...  .../
+        &lt;div class="hijo">Item 9&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        background-color: silver;
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 33vh;
+        padding: 3rem;
+      }
+      
+      .hijo {
+        background-color: #ffe799;
+        border: 1px solid #CCC;
+      }
+      </pre>
+      <h4>Ejemplo 1</h4>
+      <p>Con el valor <code>stretch</code> (valor por defecto, por lo que no es necesario escribir esa línea) este estira nuestros items para ocupar toda la grilla.</p>      
+      <div id="ejemplo1" class="mt-3 mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>        
+      </div><!-- /.ejemplo1 -->
+      <hr>
+      <h4>Ejemplo 2</h4>
+      <pre>
+        <b>justify-items: start;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-items: start;</b> <b class="color-verde"><big>◀</big> Alineación superior</b>
+      </pre>
+
+      <div id="ejemplo2" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+      <h4>Ejemplo 3</h4>
+      <pre>
+        <b>justify-items: center;</b> <b class="color-verde"><big>◀</big> Alineación al centro</b>
+        <b>align-items: center;</b> <b class="color-verde"><big>◀</big> Alineación al medio</b>
+      </pre>
+
+      <div id="ejemplo3" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+
+      <h4>Ejemplo 4</h4>
+      <pre>
+        <b>justify-items: end;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-items: end;</b> <b class="color-verde"><big>◀</big> Alineación abajo</b>
+      </pre>
+
+      <div id="ejemplo4" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+
+      <h4>Ejemplo 5</h4>
+      <p>Si deseamos que uno de los ítems hijos tengan una distribución diferente al resto, aplicamos la propiedad <code>justify-self</code> (justificarte a ti mismo) o <code>align-self</code> (alinearte a ti mismo) sobre el ítem hijo en cuestión, sobreescribiendo su distribución.</p>
+      <p>Estas propiedades funcionan exactamente igual que <code>justify-items</code> o <code>align-items</code>, sólo que en lugar de indicarse en el elemento padre contenedor, se hace sobre un elemento hijo. </p>
+      <pre>
+
+        .hijo:nth-of-type(5) {
+          background-color: #09458d;
+          color: white;
+          <b>justify-self: start;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+          <b>align-self: start;</b> <b class="color-verde"><big>◀</big> Alineación arriba</b>
+        }
+  
+      </pre>
+
+      <div id="ejemplo5" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

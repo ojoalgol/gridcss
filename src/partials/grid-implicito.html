@@ -1,0 +1,176 @@
+  <!-- ********** Manejando el grid implicito -->
+  <section id="grid-implicito" class="">
+    <h2>Manejando el grid implicito</h2>    
+    <div class="contenedor">
+      <p>El <strong>Grid Implícito</strong> son todas aquellas celdas cuyas características no han sido predefinidas.</p>
+      <p>Podemos las propiedades <code>grid-auto-columns</code> y <code>grid-auto-rows</code> para darle un tamaño automático a las celdas de la cuadrícula, sin importar cuantas definamos en un momento X. Para ello, sólo hay que especificar el tamaño deseado en cada una de las propiedades.</p>
+      <p>Adicionalmente, utilizaremos <code>grid-auto-flow</code> para señalar el flujo de elementos en la cuadrícula.</p>
+      <br>
+      <table class="mb-3">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valores</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>grid-auto-columns</td>
+            <td>[<em>tamaño</em>]</td>
+            <td>Indica el tamaño de ancho que tendrán las columnas automáticas.</td>
+          </tr>
+          <tr>
+            <td>grid-auto-rows</td>
+            <td>[<em>tamaño</em>]</td>
+            <td>Indica el tamaño de alto que tendrán las filas automáticas.</td>
+          </tr>
+          <tr>
+            <td>grid-auto-flow</td>
+            <td>row | column | dense</td>
+            <td>Utiliza un algoritmo de autocolocación (intenta rellenar los espacios vacíos).</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <h4>Ejemplo 1</h4>
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;/div>
+        /...  .../
+        &lt;div class="hijo a">Soy una celda automática&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: [inicio-col] 37% [segunda-col] 
+        25% [tercer-col] 15% [cuarta-col] 15% [final-col];
+        grid-template-rows: [inicio-fila] 12rem [segunda-fila]
+        12rem [final-fila];
+        grid-gap: 3px;
+        <b>grid-auto-flow: row;</b> <b class="color-verde"><big>◀</big> La celdas fluyen en filas</b>
+      }
+      
+      .hijo {text-align: center;}
+      
+      .hijo:nth-of-type(1) {grid-column: inicio-col / segunda-col;
+        grid-row: inicio-fila / final-fila;}
+
+      .hijo:nth-of-type(2) {grid-column: segunda-col / tercer-col;
+        grid-row: inicio-fila / final-fila;}
+
+      .hijo:nth-of-type(3) {grid-column: tercer-col / final-col;
+        grid-row: inicio-fila / segunda-fila;}
+
+      .hijo:nth-of-type(4) {grid-column: tercer-col / cuarta-col;
+        grid-row: segunda-fila / final-fila;}
+
+      .hijo:nth-of-type(5) {grid-column: cuarta-col / final-col;
+        grid-row: segunda-fila / final-fila;}
+
+      </pre>
+
+      <div id="ejemplo1" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo1 -->
+      <hr>
+      <h4>Ejemplo 2</h4>
+      <pre>
+        <b>grid-auto-flow: row;</b> <b class="color-verde"><big>◀</big> La celdas fluyen en columnas</b>
+      </pre>
+
+      <div id="ejemplo2" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo2 -->
+      <hr>
+      
+      <h4>Ejemplo 3</h4>
+      <p><code>grid-auto-flow</code> acepta una palabra reservada para describir el planteamiento de "cargado". Por defecto éste valor es <code>sparse</code>, pero podemos alterar ésto a <code>dense</code> que intenta cubrir todas los huecos disponibles. No hace falta que coloquemos la alabra <code>row</code> por que ya está implícita.</p>
+      <pre>
+        <b>grid-auto-flow: dense;</b> <b class="color-verde"><big>◀</big> La celdas fluyen mas densamente</b>
+      </pre>
+
+      <div id="ejemplo3" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo3 -->
+
+      <h4>Ejemplo 4</h4>
+      <p>Si tenemos definido<code>grid-auto-flow: column</code>, podemos establecer el ancho de esta columnas automáticas con <code>grid-auto-columns</code>.</p>      
+      <pre>
+        <b>grid-auto-flow: column;</b>
+        <b>grid-auto-columns: .5fr;</b> <b class="color-verde"><big>◀</big> Así definimos el ancho</b>
+      </pre>      
+
+      <div id="ejemplo4" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+        </div>        
+      </div><!-- /.ejemplo4 -->
+
+      <h4>Ejemplo 5</h4>
+      <p>Si tenemos definido<code>grid-auto-flow: row</code>  (valor por defecto así que está línea de código está de más), podemos establecer el alto de esta filas automáticas con <code>grid-auto-rows</code>.</p>      
+      <pre>
+        <b>grid-auto-rows: 80px;</b> <b class="color-verde"><big>◀</big> Así definimos el alto</b>
+      </pre>      
+
+      <div id="ejemplo5" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo5 -->
+      <br><br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->

@@ -54,9 +54,10 @@
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel9"><i class="fa fa-arrows-v fa-lg" aria-hidden="true">&nbsp;</i>Tamaño filas</a></li>
               <!-- Definiendo el nombre de líneas -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel10"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true">&nbsp;</i>Nombre de líneas</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Grid implicito</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Alineación de contenido</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel13">&nbsp; Alineación de filas y columnas</a></li>
+              <!-- Manejando el grid implicito -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11"><i class="fa fa-random fa-lg" aria-hidden="true">&nbsp;</i>Grid implicito</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12"><i class="fa fa-align-center fa-lg" aria-hidden="true">&nbsp;</i>Alineación de contenido</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel13"><i class="fa fa-columns fa-lg" aria-hidden="true">&nbsp;</i>Alineación de filas y columnas</a></li>
             </ul>
             <div class="mt-1" id="abside">
               Enrique Valerio              
@@ -1048,6 +1049,528 @@
         <div class="hijo"></div>
       </div>
       <br><br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->
+            </div>
+            <!-- Manejando el grid implicito -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel11">
+                <!-- ********** Manejando el grid implicito -->
+  <section id="grid-implicito" class="">
+    <h2>Manejando el grid implicito</h2>    
+    <div class="contenedor">
+      <p>El <strong>Grid Implícito</strong> son todas aquellas celdas cuyas características no han sido predefinidas.</p>
+      <p>Podemos las propiedades <code>grid-auto-columns</code> y <code>grid-auto-rows</code> para darle un tamaño automático a las celdas de la cuadrícula, sin importar cuantas definamos en un momento X. Para ello, sólo hay que especificar el tamaño deseado en cada una de las propiedades.</p>
+      <p>Adicionalmente, utilizaremos <code>grid-auto-flow</code> para señalar el flujo de elementos en la cuadrícula.</p>
+      <br>
+      <table class="mb-3">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valores</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>grid-auto-columns</td>
+            <td>[<em>tamaño</em>]</td>
+            <td>Indica el tamaño de ancho que tendrán las columnas automáticas.</td>
+          </tr>
+          <tr>
+            <td>grid-auto-rows</td>
+            <td>[<em>tamaño</em>]</td>
+            <td>Indica el tamaño de alto que tendrán las filas automáticas.</td>
+          </tr>
+          <tr>
+            <td>grid-auto-flow</td>
+            <td>row | column | dense</td>
+            <td>Utiliza un algoritmo de autocolocación (intenta rellenar los espacios vacíos).</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <h4>Ejemplo 1</h4>
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">&lt;/div>
+        /...  .../
+        &lt;div class="hijo a">Soy una celda automática&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        display: grid;
+        grid-template-columns: [inicio-col] 37% [segunda-col] 
+        25% [tercer-col] 15% [cuarta-col] 15% [final-col];
+        grid-template-rows: [inicio-fila] 12rem [segunda-fila]
+        12rem [final-fila];
+        grid-gap: 3px;
+        <b>grid-auto-flow: row;</b> <b class="color-verde"><big>◀</big> La celdas fluyen en filas</b>
+      }
+      
+      .hijo {text-align: center;}
+      
+      .hijo:nth-of-type(1) {grid-column: inicio-col / segunda-col;
+        grid-row: inicio-fila / final-fila;}
+
+      .hijo:nth-of-type(2) {grid-column: segunda-col / tercer-col;
+        grid-row: inicio-fila / final-fila;}
+
+      .hijo:nth-of-type(3) {grid-column: tercer-col / final-col;
+        grid-row: inicio-fila / segunda-fila;}
+
+      .hijo:nth-of-type(4) {grid-column: tercer-col / cuarta-col;
+        grid-row: segunda-fila / final-fila;}
+
+      .hijo:nth-of-type(5) {grid-column: cuarta-col / final-col;
+        grid-row: segunda-fila / final-fila;}
+
+      </pre>
+
+      <div id="ejemplo1" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo1 -->
+      <hr>
+      <h4>Ejemplo 2</h4>
+      <pre>
+        <b>grid-auto-flow: row;</b> <b class="color-verde"><big>◀</big> La celdas fluyen en columnas</b>
+      </pre>
+
+      <div id="ejemplo2" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo2 -->
+      <hr>
+      
+      <h4>Ejemplo 3</h4>
+      <p><code>grid-auto-flow</code> acepta una palabra reservada para describir el planteamiento de "cargado". Por defecto éste valor es <code>sparse</code>, pero podemos alterar ésto a <code>dense</code> que intenta cubrir todas los huecos disponibles. No hace falta que coloquemos la alabra <code>row</code> por que ya está implícita.</p>
+      <pre>
+        <b>grid-auto-flow: dense;</b> <b class="color-verde"><big>◀</big> La celdas fluyen mas densamente</b>
+      </pre>
+
+      <div id="ejemplo3" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo3 -->
+
+      <h4>Ejemplo 4</h4>
+      <p>Si tenemos definido<code>grid-auto-flow: column</code>, podemos establecer el ancho de esta columnas automáticas con <code>grid-auto-columns</code>.</p>      
+      <pre>
+        <b>grid-auto-flow: column;</b>
+        <b>grid-auto-columns: .5fr;</b> <b class="color-verde"><big>◀</big> Así definimos el ancho</b>
+      </pre>      
+
+      <div id="ejemplo4" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+          <div class="hijo a">Soy una celda auto...</div>
+        </div>        
+      </div><!-- /.ejemplo4 -->
+
+      <h4>Ejemplo 5</h4>
+      <p>Si tenemos definido<code>grid-auto-flow: row</code>  (valor por defecto así que está línea de código está de más), podemos establecer el alto de esta filas automáticas con <code>grid-auto-rows</code>.</p>      
+      <pre>
+        <b>grid-auto-rows: 80px;</b> <b class="color-verde"><big>◀</big> Así definimos el alto</b>
+      </pre>      
+
+      <div id="ejemplo5" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo"></div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+          <div class="hijo a">Soy una celda automática</div>
+        </div>        
+      </div><!-- /.ejemplo5 -->
+      <br><br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->
+            </div>
+            <!-- Alineacion de contenido -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel12">
+                <!-- ********** Alineacion de contenido -->
+  <section id="alineacion-contenido" class="">
+    <h2>Alineacion de contenido</h2>    
+    <div class="contenedor">
+      <p>Hay varias propiedades permiten alinear los ítems dentro de la cuadrícula, las cuales veremos a detalle a continuación.</p>
+      <p>Comencemos por <code>justify-items</code> y <code>align-items</code>.</p>
+      <br>
+      <table class="mt-3">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valores</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lead">justify-items</td>
+            <td>start | end | center | <strong>stretch</strong></td>
+            <td>Distribuye los elementos en el eje horizontal.</td>
+          </tr>
+          <tr>
+            <td class="lead">align-items</td>
+            <td>start | end | center | <strong>stretch</strong></td>
+            <td>Distribuye los elementos en el eje vertical.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Estas propiedades se aplican sobre el elemento contenedor padre, pero afectan a los ítems hijos, por lo que actuan sobre la distribución de cada uno de los hijos.</p>
+      <br>      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Item 1&lt;/div>
+        /...  .../
+        &lt;div class="hijo">Item 9&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        background-color: silver;
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 33vh;
+        padding: 3rem;
+      }
+      
+      .hijo {
+        background-color: #ffe799;
+        border: 1px solid #CCC;
+      }
+      </pre>
+      <h4>Ejemplo 1</h4>
+      <p>Con el valor <code>stretch</code> (valor por defecto, por lo que no es necesario escribir esa línea) este estira nuestros items para ocupar toda la grilla.</p>      
+      <div id="ejemplo1" class="mt-3 mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>        
+      </div><!-- /.ejemplo1 -->
+      <hr>
+      <h4>Ejemplo 2</h4>
+      <pre>
+        <b>justify-items: start;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-items: start;</b> <b class="color-verde"><big>◀</big> Alineación superior</b>
+      </pre>
+
+      <div id="ejemplo2" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+      <h4>Ejemplo 3</h4>
+      <pre>
+        <b>justify-items: center;</b> <b class="color-verde"><big>◀</big> Alineación al centro</b>
+        <b>align-items: center;</b> <b class="color-verde"><big>◀</big> Alineación al medio</b>
+      </pre>
+
+      <div id="ejemplo3" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+
+      <h4>Ejemplo 4</h4>
+      <pre>
+        <b>justify-items: end;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-items: end;</b> <b class="color-verde"><big>◀</big> Alineación abajo</b>
+      </pre>
+
+      <div id="ejemplo4" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+
+      <h4>Ejemplo 5</h4>
+      <p>Si deseamos que uno de los ítems hijos tengan una distribución diferente al resto, aplicamos la propiedad <code>justify-self</code> (justificarte a ti mismo) o <code>align-self</code> (alinearte a ti mismo) sobre el ítem hijo en cuestión, sobreescribiendo su distribución.</p>
+      <p>Estas propiedades funcionan exactamente igual que <code>justify-items</code> o <code>align-items</code>, sólo que en lugar de indicarse en el elemento padre contenedor, se hace sobre un elemento hijo. </p>
+      <pre>
+
+        .hijo:nth-of-type(5) {
+          background-color: #09458d;
+          color: white;
+          <b>justify-self: start;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+          <b>align-self: start;</b> <b class="color-verde"><big>◀</big> Alineación arriba</b>
+        }
+  
+      </pre>
+
+      <div id="ejemplo5" class="mb-3">
+        <div class="padre mt-2">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+          <div class="hijo">Item 7</div>
+          <div class="hijo">Item 8</div>
+          <div class="hijo">Item 9</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->
+            </div>
+            <!-- Alineacion de filas y columnas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel13">
+                <!-- ********** Alineacion de filas y columnas -->
+  <section id="alineacion-filas-columnas" class="">
+    <h2>Alineacion de filas y columnas</h2>    
+    <div class="contenedor">
+      <p>Usaremos las propiedades <code>justify-content</code> y/o <code>align-content</code> para modificar la distribución de toda la grilla en su conjunto, en vez de los ítems por separado:</p>
+      <br>
+      <table class="mt-3">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valores</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td><b>justify-content</b></td>
+            <td>start | end | center | stretch | space-around | space-between | space-evenly</td>
+          </tr>
+          <tr>
+          <td><b>align-content</b></td>
+            <td>start | end | center | stretch | space-around | space-between | space-evenly</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Con estas propiedades, y las vistas en la sección <strong>Alineacion de contenido</strong>, podemos controlar todo lo referente al posicionamiento de la cuadrícula y sus elementos.</p>
+      <br>      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Item 1&lt;/div>
+        /...  .../
+        &lt;div class="hijo">Item 6&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        background-color: silver;
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 33vh;
+        padding: 3rem;
+      }
+      
+      .hijo {
+        background-color: #ffe799;
+        border: 1px solid #CCC;
+      }
+      </pre>
+      <h4>Ejemplo 1</h4>
+      <p>Con el valor <code>stretch</code> (valor por defecto, por lo que no es necesario escribir esa línea) este coloca nuestra grilla alineada arriba y a la derecha, y ocupa el máximo disponible de la grilla.</p>     
+      <div id="ejemplo1" class="mt-3 mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>        
+      </div><!-- /.ejemplo1 -->
+      <hr>
+
+      <h4>Ejemplo 2</h4>
+      <pre>
+        <b>justify-content: start;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-content: start;</b> <b class="color-verde"><big>◀</big> Alineación superior</b>
+      </pre>
+      <div id="ejemplo2" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+
+      <h4>Ejemplo 3</h4>
+      <pre>
+        <b>justify-content: center;</b> <b class="color-verde"><big>◀</big> Alineación al centro</b>
+        <b>align-content: center;</b> <b class="color-verde"><big>◀</big> Alineación al medio</b>
+      </pre>
+      <div id="ejemplo3" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>     
+      </div><!-- /.ejemplo3 -->
+      <hr>
+
+      <h4>Ejemplo 4</h4>
+      <pre>
+        <b>justify-content: end;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-content: end;</b> <b class="color-verde"><big>◀</big> Alineación abajo</b>
+      </pre>
+      <div id="ejemplo4" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo4 -->
+      <hr>
+
+      <h4>Ejemplo 5</h4>
+      <p>Con <code>space-around</code> los items se alinean uniformemente de tal manera que el espacio entre dos items adyacentes es el mismo. El espacio vacío anterior al primer item y posterior al último item equivale a la mitad del espacio entre dos items adyacentes.</p>
+      <pre>
+        <b>justify-content: space-around;</b> 
+        <b>align-content: space-around;</b> 
+      </pre>
+      <div id="ejemplo5" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo5 -->
+      <hr>
+
+      <h4>Ejemplo 6</h4>
+      <p>Con <code>space-between</code> los items se distribuyen uniformemente. El espaciamiento se hace de tal manera que el espacio adyacente entre dos items es el mismo. Los bordes se alinean al ras con el borde del primer y último item respectivamente.</p>
+      <pre>
+        <b>justify-content: space-between;</b> 
+        <b>align-content: space-between;</b> 
+      </pre>
+      <div id="ejemplo6" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo6 -->
+      <hr>
+
+      <h4>Ejemplo 7</h4>
+      <p>Con <code>space-evenly</code> los items se alinean uniformemente de tal manera que el espacio entre dos items adyacentes es el mismo, y el espacio vacío anterior al primer item y posterior al último item también es el mismo.</p>
+      <pre>
+        <b>justify-content: space-evenly;</b> 
+        <b>align-content: space-evenly;</b> 
+      </pre>
+      <div id="ejemplo7" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo7 -->
+      <hr>
+
+      <br>
     </div><!-- /.contenedor -->
   </section>
   <!-- /. Definiendo columnas -->

@@ -38,9 +38,10 @@
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel9"><i class="fa fa-arrows-v fa-lg" aria-hidden="true">&nbsp;</i>Tamaño filas</a></li>
               <!-- Definiendo el nombre de líneas -->
               <li class="tabs-title"><a href="#cont-ppal-tabs-panel10"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true">&nbsp;</i>Nombre de líneas</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11">&nbsp; Grid implicito</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12">&nbsp; Alineación de contenido</a></li>
-              <li class="tabs-title"><a href="#cont-ppal-tabs-panel13">&nbsp; Alineación de filas y columnas</a></li>
+              <!-- Manejando el grid implicito -->
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel11"><i class="fa fa-random fa-lg" aria-hidden="true">&nbsp;</i>Grid implicito</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel12"><i class="fa fa-align-center fa-lg" aria-hidden="true">&nbsp;</i>Alineación de contenido</a></li>
+              <li class="tabs-title"><a href="#cont-ppal-tabs-panel13"><i class="fa fa-columns fa-lg" aria-hidden="true">&nbsp;</i>Alineación de filas y columnas</a></li>
             </ul>
             <div class="mt-1" id="abside">
               Enrique Valerio              
@@ -89,6 +90,18 @@
             <!-- Definiendo el nombre de líneas -->
             <div class="tabs-panel" id="cont-ppal-tabs-panel10">
               @include('./partials/nombre-lineas.html')
+            </div>
+            <!-- Manejando el grid implicito -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel11">
+              @include('./partials/grid-implicito.html')
+            </div>
+            <!-- Alineacion de contenido -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel12">
+              @include('./partials/alineacion-contenido.html')
+            </div>
+            <!-- Alineacion de filas y columnas -->
+            <div class="tabs-panel" id="cont-ppal-tabs-panel13">
+              @include('./partials/alineacion-filas-columnas.html')
             </div>
           </div><!-- /.tabs-content -->
         </div><!-- /.columns -->

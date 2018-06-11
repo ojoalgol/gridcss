@@ -1,0 +1,174 @@
+  <!-- ********** Alineacion de filas y columnas -->
+  <section id="alineacion-filas-columnas" class="">
+    <h2>Alineacion de filas y columnas</h2>    
+    <div class="contenedor">
+      <p>Usaremos las propiedades <code>justify-content</code> y/o <code>align-content</code> para modificar la distribución de toda la grilla en su conjunto, en vez de los ítems por separado:</p>
+      <br>
+      <table class="mt-3">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valores</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td><b>justify-content</b></td>
+            <td>start | end | center | stretch | space-around | space-between | space-evenly</td>
+          </tr>
+          <tr>
+          <td><b>align-content</b></td>
+            <td>start | end | center | stretch | space-around | space-between | space-evenly</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>Con estas propiedades, y las vistas en la sección <strong>Alineacion de contenido</strong>, podemos controlar todo lo referente al posicionamiento de la cuadrícula y sus elementos.</p>
+      <br>      
+      <pre>
+      <b>HTML</b>
+      &lt;div class="padre">
+        &lt;div class="hijo">Item 1&lt;/div>
+        /...  .../
+        &lt;div class="hijo">Item 6&lt;/div>
+      &lt;/div>
+
+      <b>CSS</b>
+      .padre {
+        background-color: silver;
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 33vh;
+        padding: 3rem;
+      }
+      
+      .hijo {
+        background-color: #ffe799;
+        border: 1px solid #CCC;
+      }
+      </pre>
+      <h4>Ejemplo 1</h4>
+      <p>Con el valor <code>stretch</code> (valor por defecto, por lo que no es necesario escribir esa línea) este coloca nuestra grilla alineada arriba y a la derecha, y ocupa el máximo disponible de la grilla.</p>     
+      <div id="ejemplo1" class="mt-3 mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>        
+      </div><!-- /.ejemplo1 -->
+      <hr>
+
+      <h4>Ejemplo 2</h4>
+      <pre>
+        <b>justify-content: start;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-content: start;</b> <b class="color-verde"><big>◀</big> Alineación superior</b>
+      </pre>
+      <div id="ejemplo2" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo2 -->
+      <hr>
+
+      <h4>Ejemplo 3</h4>
+      <pre>
+        <b>justify-content: center;</b> <b class="color-verde"><big>◀</big> Alineación al centro</b>
+        <b>align-content: center;</b> <b class="color-verde"><big>◀</big> Alineación al medio</b>
+      </pre>
+      <div id="ejemplo3" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>     
+      </div><!-- /.ejemplo3 -->
+      <hr>
+
+      <h4>Ejemplo 4</h4>
+      <pre>
+        <b>justify-content: end;</b> <b class="color-verde"><big>◀</big> Alineación a la derecha</b>
+        <b>align-content: end;</b> <b class="color-verde"><big>◀</big> Alineación abajo</b>
+      </pre>
+      <div id="ejemplo4" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo4 -->
+      <hr>
+
+      <h4>Ejemplo 5</h4>
+      <p>Con <code>space-around</code> los items se alinean uniformemente de tal manera que el espacio entre dos items adyacentes es el mismo. El espacio vacío anterior al primer item y posterior al último item equivale a la mitad del espacio entre dos items adyacentes.</p>
+      <pre>
+        <b>justify-content: space-around;</b> 
+        <b>align-content: space-around;</b> 
+      </pre>
+      <div id="ejemplo5" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo5 -->
+      <hr>
+
+      <h4>Ejemplo 6</h4>
+      <p>Con <code>space-between</code> los items se distribuyen uniformemente. El espaciamiento se hace de tal manera que el espacio adyacente entre dos items es el mismo. Los bordes se alinean al ras con el borde del primer y último item respectivamente.</p>
+      <pre>
+        <b>justify-content: space-between;</b> 
+        <b>align-content: space-between;</b> 
+      </pre>
+      <div id="ejemplo6" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo6 -->
+      <hr>
+
+      <h4>Ejemplo 7</h4>
+      <p>Con <code>space-evenly</code> los items se alinean uniformemente de tal manera que el espacio entre dos items adyacentes es el mismo, y el espacio vacío anterior al primer item y posterior al último item también es el mismo.</p>
+      <pre>
+        <b>justify-content: space-evenly;</b> 
+        <b>align-content: space-evenly;</b> 
+      </pre>
+      <div id="ejemplo7" class="mb-3">
+        <div class="padre">
+          <div class="hijo">Item 1</div>
+          <div class="hijo">Item 2</div>
+          <div class="hijo">Item 3</div>
+          <div class="hijo">Item 4</div>
+          <div class="hijo">Item 5</div>
+          <div class="hijo">Item 6</div>
+        </div>       
+      </div><!-- /.ejemplo7 -->
+      <hr>
+
+      <br>
+    </div><!-- /.contenedor -->
+  </section>
+  <!-- /. Definiendo columnas -->
