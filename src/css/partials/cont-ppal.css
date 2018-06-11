@@ -14,14 +14,38 @@ ESTILOS CONTENIDO PPAL: cont-ppal.css;
 		color: var(--colorBlanco);
 		padding: 1.5rem;
 		width: 100%;
+
+		& a {color: white;transition: .3s;}
+		& a:hover {color: color(var(--colorSec));transition: .3s;}
+
 	}
-	#cont-ppal-tabs {
+	& #cont-ppal-header {
+		background: var(--colorPpal);
+		padding: 1rem;
+		text-shadow: 0 .5px hsl(0,0%,80%),
+		0 1px hsl(0,0%,75%),
+		0 1.5px hsl(0,0%,70%),
+		0 2px hsl(0,0%,65%),
+		0 1.5px hsl(0,0%,55%);
+
+		& h1 {
+			color: white !important;
+		}
+	}
+	& #cont-ppal-tabs {
 
 		& li a{font-size: responsive 1.1rem 1.6rem;}
 		
 		& i {@media (--mobile){display: none;}}
 		
 		& i {@media (--tablet-v){display: none;}}
+	}
+	
+	#iconos {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		justify-content: space-evenly; 
 	}
 
 	& .tabs > li {

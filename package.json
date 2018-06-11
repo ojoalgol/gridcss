@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xxxxxxxxxxxxxxxx"
+    "url": "git+https://github.com/https://github.com/Caballero73/gridcss"
   },
   "author": "Enrique Valerio",
   "license": "",
   "bugs": {
-    "url": "https://github.com/xxxxxxxxxxxxxxxx/issues"
+    "url": "https://github.com/https://github.com/Caballero73/gridcss/issues"
   },
-  "homepage": "https://github.com/xxxxxxxxxxxxxxxx#readme",
+  "homepage": "https://github.com/https://github.com/Caballero73/gridcss#readme",
   "devDependencies": {
     "autoprefixer": "^8.5.1",
     "browser-sync": "^2.24.4",
